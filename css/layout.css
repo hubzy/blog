@@ -1076,7 +1076,6 @@ article .content .caption {
   position: sticky;
   top: 0px;
   overflow: overlay;
-  border-right: 0.5px solid var(--color-scrollbar);
 }
 .hubzy_left .hubzy_logo {
   height: 80px;
