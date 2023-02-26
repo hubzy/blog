@@ -143,14 +143,7 @@ $(document).ready(function () {
       })
     }
   }
-  var imgpup = $('.img-pup')
-  $('img').click(function () {
-    imgpup.show()
-    $('.img-pup > img')[0].src = this.src
-  })
-  imgpup.click(() => {
-    imgpup.hide()
-  })
+
 
 
   clickTreeDirectory();
@@ -158,8 +151,20 @@ $(document).ready(function () {
   pjaxLoad();
   showArticleIndex();
   switchTreeOrIndex();
-
+  imgClick()
 });
+
+function imgClick(){
+  let imgpup = $('.img-pup')
+  $('img').click(function () {
+    imgpup.show()
+    $('.img-pup > img')[0].src = this.src
+  })
+  imgpup.click(() => {
+    imgpup.hide()
+  })
+}
+
 
 function switchTreeOrIndex() {
   let t = true;
@@ -192,6 +197,7 @@ function pjaxLoad(){
           e.relatedTarget.parentNode.classList.add("active");
           //文章目录更新
           showArticleIndex() 
+          imgClick()
       }
   });
 }
