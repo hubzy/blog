@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang=zh-CN>
+  <head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta property="og:type" content="article">
+<meta property="og:title" content="icon、切图维护&#x2F;协作方式问题解决">
+<meta property="og:url" content="https://hubzyy.gitee.io/%E6%96%87%E7%AB%A0/%E5%88%87%E5%9B%BE%E5%8D%8F%E4%BD%9C%E6%96%B9%E5%BC%8F/index.html">
+<meta property="og:site_name" content="Hubzy">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://hubzyy.gitee.io/blog/%E6%96%87%E7%AB%A0/%E5%88%87%E5%9B%BE%E5%8D%8F%E4%BD%9C%E6%96%B9%E5%BC%8F/hEyPGLMpzw2UgqtRcOcOGQ.png">
+<meta property="og:image" content="https://hubzyy.gitee.io/blog/%E6%96%87%E7%AB%A0/%E5%88%87%E5%9B%BE%E5%8D%8F%E4%BD%9C%E6%96%B9%E5%BC%8F/TlodIX0p294u8F4f7YzXXw.png">
+<meta property="og:image" content="https://hubzyy.gitee.io/blog/%E6%96%87%E7%AB%A0/%E5%88%87%E5%9B%BE%E5%8D%8F%E4%BD%9C%E6%96%B9%E5%BC%8F/OZZj5hdLldcBaxu6p0kbrg.png">
+<meta property="og:image" content="https://hubzyy.gitee.io/blog/%E6%96%87%E7%AB%A0/%E5%88%87%E5%9B%BE%E5%8D%8F%E4%BD%9C%E6%96%B9%E5%BC%8F/cDF8HOuYg9DFoOfDcT8qYw.png">
+<meta property="og:image" content="https://hubzyy.gitee.io/blog/%E6%96%87%E7%AB%A0/%E5%88%87%E5%9B%BE%E5%8D%8F%E4%BD%9C%E6%96%B9%E5%BC%8F/v2r4BS7MQiHA1K-7GpNLYg.png">
+<meta property="og:image" content="https://hubzyy.gitee.io/blog/%E6%96%87%E7%AB%A0/%E5%88%87%E5%9B%BE%E5%8D%8F%E4%BD%9C%E6%96%B9%E5%BC%8F/Wp0D8C2Ay_DbZFAyC2N3Uw.png">
+<meta property="og:image" content="https://hubzyy.gitee.io/blog/%E6%96%87%E7%AB%A0/%E5%88%87%E5%9B%BE%E5%8D%8F%E4%BD%9C%E6%96%B9%E5%BC%8F/dTMh77LoTrBfB2BPlakyiw.png">
+<meta property="article:published_time" content="2021-06-19T20:35:47.000Z">
+<meta property="article:modified_time" content="2022-05-06T13:37:47.000Z">
+<meta property="article:author" content="hubzy">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://hubzyy.gitee.io/blog/%E6%96%87%E7%AB%A0/%E5%88%87%E5%9B%BE%E5%8D%8F%E4%BD%9C%E6%96%B9%E5%BC%8F/hEyPGLMpzw2UgqtRcOcOGQ.png">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/blog/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/blog/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    
+      <title>Hubzy·icon、切图维护/协作方式问题解决</title>
+    
+    
+    <!-- styles -->
+
+    <!-- 默认CSS引入方法 -->
+    
+<link rel="stylesheet" href="/blog/css/layout.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+
+
+  
+  <!-- L2Dwidget -->
+  
+<script src="/blog/lib/live2d/L2Dwidget.min.js"></script>
+
+
+  <script>
+  // 猫
+  L2Dwidget.init({
+    model: {
+      jsonPath: "/blog/lib/live2d/tororo/assets/tororo.model.json",
+    },
+    display: {
+      superSample: 2,
+      width: 60,
+      height: 80,
+      position: 'right',
+      hOffset: 0,
+      vOffset: 20,
+    },
+    mobile: {
+      show: true,
+      scale: 1,
+      motion: true,
+    },
+    react: {
+      opacityDefault: 1,
+      opacityOnHover: 1,
+    }
+  })
+  //百度搜索爬虫
+
+
+
+var _hmt = _hmt || [];
+(function () {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7e9a19e5e700f1a2607b47c7bd6b35e8";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+
+  </script>
+  <meta name="baidu-site-verification" content="code-dIan6MAmy5" />
+  
+
+  <!-- styles -->
+
+
+ 
+  <link
+    rel="preload"
+    href="/blog/lib/font-awesome/css/all.min.css"
+    as="style"
+    onload="this.onload=null;this.rel='stylesheet'"
+  />
+  <noscript
+    ><link
+      rel="stylesheet"
+      href="/blog/lib/font-awesome/css/all.min.css"
+  /></noscript>
+
+
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+    <body class="max-width mx-auto">
+     <div class="home">
+        <!-- //actions_desktop 右上角导航栏 -->
+      <aside id="#aside" class="hubzy_left">
+        
+          <div class="hubzy_logo">
+	<a href="/blog/">
+		
+		  
+					<div id="logo" style="background-image: url(/blog/images/logo.png);"></div>
+					
+					  
+	  </a>
+	  <div id="title">
+		<a href="/blog/">
+		  <h1>
+			Hubzy
+		  </h1>
+		</a>
+	  </div>
+</div>
+<!-- 搜索栏 -->
+<div id="search">
+	<input class="search-input" type="text" placeholder="search">
+	<span id="search-icon" class="fa fa-bars" title="展开目录"></span>
+</div>
+
+<!-- 侧边目录栏 -->
+<div id="tree">
+	
+
+	
+					<ul>
+						<li class="directory">
+							<a href="#" class="directory">
+								<i class="fa fa-folder"></i>
+								AE
+							</a>
+							
+					<ul>
+						<li class="file">
+							<a href="/blog/AE/AE勾画效果/">
+								<i class="fa fa-file"></i>
+								AE勾画效果
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/AE/AE语言切换/">
+								<i class="fa fa-file"></i>
+								AE语言切换
+							</a>
+						</li>
+					</ul>
+	
+						</li>
+						
+					</ul>
+	
+					<ul>
+						<li class="directory">
+							<a href="#" class="directory">
+								<i class="fa fa-folder"></i>
+								C4D
+							</a>
+							
+					<ul>
+						<li class="file">
+							<a href="/blog/C4D/Blender批量转换格式脚本/">
+								<i class="fa fa-file"></i>
+								Blender批量转换格式脚本
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/C4D/C4D全息科技线条效果/">
+								<i class="fa fa-file"></i>
+								C4D全息科技线条效果
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/C4D/QuadRemesher/">
+								<i class="fa fa-file"></i>
+								QuadRemesher
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/C4D/建模规范指南/">
+								<i class="fa fa-file"></i>
+								建模规范指南
+							</a>
+						</li>
+					</ul>
+	
+						</li>
+						
+					</ul>
+	
+					<ul>
+						<li class="directory">
+							<a href="#" class="directory">
+								<i class="fa fa-folder"></i>
+								UE
+							</a>
+							
+					<ul>
+						<li class="file">
+							<a href="/blog/UE/UE5基本操作笔记/">
+								<i class="fa fa-file"></i>
+								UE5基本操作笔记
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/UE/UE5工业场景项目打包/">
+								<i class="fa fa-file"></i>
+								UE5工业场景项目打包
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/UE/Ue5/">
+								<i class="fa fa-file"></i>
+								Ue5
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/UE/工业场景数据可视化UE5/">
+								<i class="fa fa-file"></i>
+								工业场景数据可视化UE5
+							</a>
+						</li>
+					</ul>
+	
+						</li>
+						
+					</ul>
+	
+					<ul>
+						<li class="directory">
+							<a href="#" class="directory">
+								<i class="fa fa-folder"></i>
+								其它
+							</a>
+							
+					<ul>
+						<li class="file">
+							<a href="/blog/其它/Hexo使用说明/">
+								<i class="fa fa-file"></i>
+								Hexo使用说明
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/其它/Markdown新手指南/">
+								<i class="fa fa-file"></i>
+								Markdown新手指南
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/其它/git配置/">
+								<i class="fa fa-file"></i>
+								git配置
+							</a>
+						</li>
+					</ul>
+	
+						</li>
+						
+					</ul>
+	
+					<ul>
+						<li class="directory">
+							<a href="#" class="directory">
+								<i class="fa fa-folder"></i>
+								学习
+							</a>
+							
+					<ul>
+						<li class="file">
+							<a href="/blog/学习/Lottie笔记/">
+								<i class="fa fa-file"></i>
+								Lottie笔记
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/学习/QGIS/">
+								<i class="fa fa-file"></i>
+								QGIS
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/学习/三维可视化基础/">
+								<i class="fa fa-file"></i>
+								三维可视化基础
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/学习/模型生产规范/">
+								<i class="fa fa-file"></i>
+								模型生产规范
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/学习/电影-风平浪静/">
+								<i class="fa fa-file"></i>
+								电影-风平浪静
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="directory">
+							<a href="#" class="directory">
+								<i class="fa fa-folder"></i>
+								看完的书籍
+							</a>
+							
+					<ul>
+						<li class="file">
+							<a href="/blog/学习/看完的书籍/写给大家看的设计书/">
+								<i class="fa fa-file"></i>
+								写给大家看的设计书
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/学习/看完的书籍/破茧成蝶/">
+								<i class="fa fa-file"></i>
+								破茧成蝶
+							</a>
+						</li>
+					</ul>
+	
+						</li>
+						
+					</ul>
+	
+						</li>
+						
+					</ul>
+	
+					<ul>
+						<li class="directory">
+							<a href="#" class="directory">
+								<i class="fa fa-folder"></i>
+								文章
+							</a>
+							
+					<ul>
+						<li class="file">
+							<a href="/blog/文章/Lotte动画/">
+								<i class="fa fa-file"></i>
+								Lotte动画
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/文章/PC端设计稿适配问题/">
+								<i class="fa fa-file"></i>
+								PC端设计稿适配问题
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/文章/SketchMeaXure/">
+								<i class="fa fa-file"></i>
+								SketchMeaXure
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/文章/sketch在标签页打开文件默认合并窗口/">
+								<i class="fa fa-file"></i>
+								sketch在标签页打开文件默认合并窗口
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/文章/sketch插件制作/">
+								<i class="fa fa-file"></i>
+								sketch插件制作
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/文章/sketch预览显示连接错误解决方案/">
+								<i class="fa fa-file"></i>
+								sketch预览显示连接错误解决方案
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file active">
+							<a href="/blog/文章/切图协作方式/">
+								<i class="fa fa-file"></i>
+								切图协作方式
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/文章/序列帧动画踩坑落地/">
+								<i class="fa fa-file"></i>
+								序列帧动画踩坑落地
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/文章/数据可视化之图表选择/">
+								<i class="fa fa-file"></i>
+								数据可视化之图表选择
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/文章/杭州数据可视化大屏设计/">
+								<i class="fa fa-file"></i>
+								杭州数据可视化大屏设计
+							</a>
+						</li>
+					</ul>
+	
+						</li>
+						
+					</ul>
+	
+					<ul>
+						<li class="directory">
+							<a href="#" class="directory">
+								<i class="fa fa-folder"></i>
+								脚本
+							</a>
+							
+					<ul>
+						<li class="file">
+							<a href="/blog/脚本/Mac移动硬盘/">
+								<i class="fa fa-file"></i>
+								Mac移动硬盘
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/脚本/gitPage更新脚本/">
+								<i class="fa fa-file"></i>
+								gitPage更新脚本
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/脚本/notion汉化脚本/">
+								<i class="fa fa-file"></i>
+								notion汉化脚本
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/脚本/书签脚本/">
+								<i class="fa fa-file"></i>
+								书签脚本
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/脚本/常用终端命令/">
+								<i class="fa fa-file"></i>
+								常用终端命令
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/脚本/微信阅读自动滚动、沉浸式阅读/">
+								<i class="fa fa-file"></i>
+								微信阅读自动滚动、沉浸式阅读
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/脚本/搞定设计、创客贴 油猴插件/">
+								<i class="fa fa-file"></i>
+								搞定设计、创客贴 油猴插件
+							</a>
+						</li>
+					</ul>
+	
+						</li>
+						
+					</ul>
+	
+</div>
+
+        
+      </aside>
+      <div id="header-post" class="hubzy_right">
+        
+          
+  <!-- <a id="menu-icon" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a> -->
+  <!-- <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a> -->
+  <a id="top-icon-tablet" href="#" "Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"
+    style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        
+          <li><a href="/blog/">
+              首页
+            </a></li>
+          
+          <li><a href="/blog/categories/%E9%A1%B9%E7%9B%AE/">
+              项目
+            </a></li>
+          
+          <li><a href="/blog/archives/">
+              归档
+            </a></li>
+          
+          <li><a href="/blog/about/">
+              关于
+            </a></li>
+          
+      </ul>
+    </span>
+    <br />
+    <div id="toc">
+      
+    </div>
+    <br />
+    <span id="actions">
+      <ul>
+        
+          <li><a class="icon" aria-label="上一篇 " href="/blog/%E6%96%87%E7%AB%A0/%E5%BA%8F%E5%88%97%E5%B8%A7%E5%8A%A8%E7%94%BB%E8%B8%A9%E5%9D%91%E8%90%BD%E5%9C%B0/"><i
+                class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();"
+                onmouseout="$('#i-prev').toggle();"></i></a></li>
+          
+            
+              <li><a class="icon" aria-label="下一篇 " href="/blog/%E8%84%9A%E6%9C%AC/Mac%E7%A7%BB%E5%8A%A8%E7%A1%AC%E7%9B%98/"><i
+                    class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();"
+                    onmouseout="$('#i-next').toggle();"></i></a></li>
+              
+                <li><a class="icon" aria-label="返回顶部 " href="#"
+                    onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up"
+                      aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a>
+                </li>
+                <li><a class="icon" aria-label="分享文章 " href="#"><i class="fas fa-share-alt"
+                      aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();"
+                      onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">
+        上一篇
+      </span>
+      <span id="i-next" class="info" style="display:none;">
+        下一篇
+      </span>
+      <span id="i-top" class="info" style="display:none;">
+        返回顶部
+      </span>
+      <span id="i-share" class="info" style="display:none;">
+        分享文章
+      </span>
+    </span>
+    <br />
+    <div id="share" style="display: none">
+      <ul>
+  <li> 开发中. </li>
+  <!-- <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://hubzyy.gitee.io/%E6%96%87%E7%AB%A0/%E5%88%87%E5%9B%BE%E5%8D%8F%E4%BD%9C%E6%96%B9%E5%BC%8F/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://hubzyy.gitee.io/%E6%96%87%E7%AB%A0/%E5%88%87%E5%9B%BE%E5%8D%8F%E4%BD%9C%E6%96%B9%E5%BC%8F/&text=icon、切图维护/协作方式问题解决"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://hubzyy.gitee.io/%E6%96%87%E7%AB%A0/%E5%88%87%E5%9B%BE%E5%8D%8F%E4%BD%9C%E6%96%B9%E5%BC%8F/&title=icon、切图维护/协作方式问题解决"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://hubzyy.gitee.io/%E6%96%87%E7%AB%A0/%E5%88%87%E5%9B%BE%E5%8D%8F%E4%BD%9C%E6%96%B9%E5%BC%8F/&is_video=false&description=icon、切图维护/协作方式问题解决"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=icon、切图维护/协作方式问题解决&body=Check out this article: https://hubzyy.gitee.io/%E6%96%87%E7%AB%A0/%E5%88%87%E5%9B%BE%E5%8D%8F%E4%BD%9C%E6%96%B9%E5%BC%8F/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://hubzyy.gitee.io/%E6%96%87%E7%AB%A0/%E5%88%87%E5%9B%BE%E5%8D%8F%E4%BD%9C%E6%96%B9%E5%BC%8F/&title=icon、切图维护/协作方式问题解决"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://hubzyy.gitee.io/%E6%96%87%E7%AB%A0/%E5%88%87%E5%9B%BE%E5%8D%8F%E4%BD%9C%E6%96%B9%E5%BC%8F/&title=icon、切图维护/协作方式问题解决"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://hubzyy.gitee.io/%E6%96%87%E7%AB%A0/%E5%88%87%E5%9B%BE%E5%8D%8F%E4%BD%9C%E6%96%B9%E5%BC%8F/&title=icon、切图维护/协作方式问题解决"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://hubzyy.gitee.io/%E6%96%87%E7%AB%A0/%E5%88%87%E5%9B%BE%E5%8D%8F%E4%BD%9C%E6%96%B9%E5%BC%8F/&title=icon、切图维护/协作方式问题解决"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://hubzyy.gitee.io/%E6%96%87%E7%AB%A0/%E5%88%87%E5%9B%BE%E5%8D%8F%E4%BD%9C%E6%96%B9%E5%BC%8F/&name=icon、切图维护/协作方式问题解决&description=&lt;hr&gt;"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://hubzyy.gitee.io/%E6%96%87%E7%AB%A0/%E5%88%87%E5%9B%BE%E5%8D%8F%E4%BD%9C%E6%96%B9%E5%BC%8F/&t=icon、切图维护/协作方式问题解决"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li> -->
+
+</ul>
+
+    </div>
+
+  </span>
+
+        
+      </div>
+       
+      <div class="content  hubzy_center">
+        
+          <!-- //body 引入首页和md编译后的页面 -->
+          <!-- md 编译成 html 后的文件模板 -->
+
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="hubzy_center_title">
+    
+    <h1 class="posttitle" itemprop="name headline">
+        icon、切图维护/协作方式问题解决
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">hubzy</span>
+      </span>
+      <!-- 文章时间和首页时间 -->
+
+    <div class="postdate">
+      
+        <time datetime="2021-06-19T20:35:47.000Z" itemprop="datePublished">2021-06-20</time>
+        
+        <!-- (Updated: <time datetime="2022-05-06T13:37:47.000Z" itemprop="dateModified">2022-05-06</time>) -->
+        
+      
+    </div>
+
+
+      
+    <div class="article-category">
+        <i class="fas fa-archive"></i>
+        <a class="category-link" href="/blog/categories/%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/">经验分享</a>
+    </div>
+
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content conterDiy"  id="article" itemprop="articleBody">
+    <hr>
+<span id="more"></span> 
+
+<p>根据上次会议探讨遗留的问题，设计与前端开发如何对接切图问题。</p>
+<ol>
+<li>如何对接。</li>
+<li>怎么操作。</li>
+</ol>
+<hr>
+<h1 id="目的"><a href="#目的" class="headerlink" title="目的"></a><strong>目的</strong></h1><ol>
+<li>为了设计更好的给前端提供切图，2、为了前端更方便高效的使用切图。</li>
+</ol>
+<h1 id="现状"><a href="#现状" class="headerlink" title="现状"></a>现状</h1><p>目前与前端对接主要是使用<strong>【SketchMeaXure】</strong>导出 <strong>Html</strong> 文件，然后上传至服务器。前端即可浏览视觉设计稿并查看标注信息。</p>
+<p>切图文件交付方式主要有两种：</p>
+<ol>
+<li><strong>【压缩包】</strong>设计整理好切图文件-再压缩打包文件，发送给前端。</li>
+<li><strong>【在线下载】</strong>设计在设计稿中切图标注，在页面中标注好切图图层信息，名字、倍数、格式。再使用<strong>【SketchMeaXure】</strong>导出 <strong>Html</strong> 文件之后前端在设计稿上进行下载。</li>
+</ol>
+<h1 id="存在问题"><a href="#存在问题" class="headerlink" title="存在问题"></a><strong>存在问题</strong></h1><ol>
+<li><strong>【压缩包】</strong>前端反馈切图包分类不明确，比较乱、切图太多的时候需要挨个寻找切图，效率很低还很麻烦。</li>
+<li><strong>【在线下载】</strong>前端反馈有些切图无法下载。（经过调查，切图无法下载的问题是由于在上传视觉稿文件包时，‘assets’-文件未上传而引起的。 ）</li>
+</ol>
+<p>科普（唠叨一下）<strong>【SketchMeaXure】</strong>导出的文件目录以及作用性，新版本目录。</p>
+<p><strong>index.html</strong>        — 索引文件、标注信息数据、缺失之后打不开视觉高<strong>「重要」</strong></p>
+<p><strong>proto.html</strong>        —新版本新增原型稿索引文件（目前我们没使用）</p>
+<p><strong>‘assets’</strong>            —主要放置切图，文件丢失之后切图无法下载和预览<strong>「重要」</strong></p>
+<p><strong>‘preview’</strong>            —预览文件 主要放置设计稿图片（高质量大图）<strong>「重要」</strong></p>
+<p><strong>‘icons’</strong>        —缩略图文件<strong>「重要」</strong></p>
+<p><strong>‘links’</strong>            —链接（当发送某单独页面时起作用）</p>
+<p><strong>‘src’</strong>                —新版本中新增配置文件缺失后无法打开视觉稿<strong>「重要」</strong></p>
+<p>所以在上传的时候还需要完整上传！！</p>
+<h1 id="确定方案"><a href="#确定方案" class="headerlink" title="确定方案"></a><strong>确定方案</strong></h1><p>经过与前端老哥的交流，都普遍认为<strong>【在线下载】</strong>比较方便，根据开发页面的流程按需下载切图。中途更新也表方便。所以统一使用标注<strong>【在线下载】</strong>方式提供给前端开发，对一些特殊文件或图片单独<strong>【压缩包】</strong>提供。</p>
+<p><strong>【在线下载】</strong>对设计人员和开发人员都比较有利，设计只需要在设计页面时，简单的点击导出即可。不用再单独整理压缩包。对开发而言，不用每次解压压缩包、不用每次面对一大批切图，不用挨个找图。</p>
+<h1 id="标注流程"><a href="#标注流程" class="headerlink" title="标注流程"></a><strong>标注流程</strong></h1><p>下载更新至3.3.53版本插件<a target="_blank" rel="noopener" href="https://gitee.com/hubzyy/sketch-meaxure"><strong>【SketchMeaXure】</strong></a> 使用过程中遇到问题可以在里面提lssues。</p>
+<p>第☝️步：对需要导出对图层规范命名，命名中带「/」反斜杠即为创建文件夹，可多层级。</p>
+<p>例如：</p>
+<p>​                 <img src="/blog/%E6%96%87%E7%AB%A0/%E5%88%87%E5%9B%BE%E5%8D%8F%E4%BD%9C%E6%96%B9%E5%BC%8F/hEyPGLMpzw2UgqtRcOcOGQ.png" alt="img">        </p>
+<p>第✌️步：选择需要导出的【图层】或【组】，点击制作导出项</p>
+<p>​                 <img src="/blog/%E6%96%87%E7%AB%A0/%E5%88%87%E5%9B%BE%E5%8D%8F%E4%BD%9C%E6%96%B9%E5%BC%8F/TlodIX0p294u8F4f7YzXXw.png" alt="img">        </p>
+<p>第👌步：设置导出格式，1x、2x、3x、png、svg，按需设置，即可。</p>
+<p>​                 <img src="/blog/%E6%96%87%E7%AB%A0/%E5%88%87%E5%9B%BE%E5%8D%8F%E4%BD%9C%E6%96%B9%E5%BC%8F/OZZj5hdLldcBaxu6p0kbrg.png" alt="img">        </p>
+<p>第🖖步：插件 &gt; sketch Meaxure &gt; 导出HTML    导出后检查是否OK。</p>
+<p>​                 <img src="/blog/%E6%96%87%E7%AB%A0/%E5%88%87%E5%9B%BE%E5%8D%8F%E4%BD%9C%E6%96%B9%E5%BC%8F/cDF8HOuYg9DFoOfDcT8qYw.png" alt="img">        </p>
+<p>第🖐步：打开导出文件夹中的【index.html】文件，点击设计稿中的图标，在右侧信息栏中有导出图标信息。点击可在新开的页面中右键保存，也可以拖动图标至文件夹或桌面。视觉稿放在服务器中通过链接方式打开后点击图标🉑️实现单击下载（一定是通过链接或代理的方式打开才能单击下载，否则就是在新页面打开，需要手动右键保存）</p>
+<p>​                 <img src="/blog/%E6%96%87%E7%AB%A0/%E5%88%87%E5%9B%BE%E5%8D%8F%E4%BD%9C%E6%96%B9%E5%BC%8F/v2r4BS7MQiHA1K-7GpNLYg.png" alt="img">        </p>
+<p>​                 <img src="/blog/%E6%96%87%E7%AB%A0/%E5%88%87%E5%9B%BE%E5%8D%8F%E4%BD%9C%E6%96%B9%E5%BC%8F/Wp0D8C2Ay_DbZFAyC2N3Uw.png" alt="img">        </p>
+<p>切图过程中，对于一些复杂的图层尽量选择png导出，其次需要处理好图层关系，切大的图不能覆盖小的切图，比如在banner区域中，有个向右的【icon】需要切，同时【banner】也需要切，icon的图层一定要放在banner的图层上方，如果banner在上面，就会挡住底下的icon，导致无法选中icon。</p>
+<p>第🤙步：上传至视觉文件服务器（文件不能遗漏）</p>
+<p>​                 <img src="/blog/%E6%96%87%E7%AB%A0/%E5%88%87%E5%9B%BE%E5%8D%8F%E4%BD%9C%E6%96%B9%E5%BC%8F/dTMh77LoTrBfB2BPlakyiw.png" alt="img">        </p>
+<center> 完结 🎉</center>
+  </div>
+</article>
+
+
+
+
+          
+          <!-- //actions_mobile 移动端导航栏 -->
+            <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" class="Popup" style="display: none">
+      <ul>
+         
+          <li><a href="/blog/">首页</a></li>
+         
+          <li><a href="/blog/categories/%E9%A1%B9%E7%9B%AE/">项目</a></li>
+         
+          <li><a href="/blog/archives/">归档</a></li>
+         
+          <li><a href="/blog/about/">关于</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer"  class="Popup" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9B%AE%E7%9A%84"><span class="toc-number">1.</span> <span class="toc-text">目的</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%8E%B0%E7%8A%B6"><span class="toc-number">2.</span> <span class="toc-text">现状</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AD%98%E5%9C%A8%E9%97%AE%E9%A2%98"><span class="toc-number">3.</span> <span class="toc-text">存在问题</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%A1%AE%E5%AE%9A%E6%96%B9%E6%A1%88"><span class="toc-number">4.</span> <span class="toc-text">确定方案</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A0%87%E6%B3%A8%E6%B5%81%E7%A8%8B"><span class="toc-number">5.</span> <span class="toc-text">标注流程</span></a></li></ol>
+    </div>
+
+    <div id="share-footer"  class="Popup" style="display: none">
+      <ul>
+  <li> 开发中. </li>
+  <!-- <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://hubzyy.gitee.io/%E6%96%87%E7%AB%A0/%E5%88%87%E5%9B%BE%E5%8D%8F%E4%BD%9C%E6%96%B9%E5%BC%8F/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://hubzyy.gitee.io/%E6%96%87%E7%AB%A0/%E5%88%87%E5%9B%BE%E5%8D%8F%E4%BD%9C%E6%96%B9%E5%BC%8F/&text=icon、切图维护/协作方式问题解决"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://hubzyy.gitee.io/%E6%96%87%E7%AB%A0/%E5%88%87%E5%9B%BE%E5%8D%8F%E4%BD%9C%E6%96%B9%E5%BC%8F/&title=icon、切图维护/协作方式问题解决"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://hubzyy.gitee.io/%E6%96%87%E7%AB%A0/%E5%88%87%E5%9B%BE%E5%8D%8F%E4%BD%9C%E6%96%B9%E5%BC%8F/&is_video=false&description=icon、切图维护/协作方式问题解决"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=icon、切图维护/协作方式问题解决&body=Check out this article: https://hubzyy.gitee.io/%E6%96%87%E7%AB%A0/%E5%88%87%E5%9B%BE%E5%8D%8F%E4%BD%9C%E6%96%B9%E5%BC%8F/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://hubzyy.gitee.io/%E6%96%87%E7%AB%A0/%E5%88%87%E5%9B%BE%E5%8D%8F%E4%BD%9C%E6%96%B9%E5%BC%8F/&title=icon、切图维护/协作方式问题解决"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://hubzyy.gitee.io/%E6%96%87%E7%AB%A0/%E5%88%87%E5%9B%BE%E5%8D%8F%E4%BD%9C%E6%96%B9%E5%BC%8F/&title=icon、切图维护/协作方式问题解决"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://hubzyy.gitee.io/%E6%96%87%E7%AB%A0/%E5%88%87%E5%9B%BE%E5%8D%8F%E4%BD%9C%E6%96%B9%E5%BC%8F/&title=icon、切图维护/协作方式问题解决"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://hubzyy.gitee.io/%E6%96%87%E7%AB%A0/%E5%88%87%E5%9B%BE%E5%8D%8F%E4%BD%9C%E6%96%B9%E5%BC%8F/&title=icon、切图维护/协作方式问题解决"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://hubzyy.gitee.io/%E6%96%87%E7%AB%A0/%E5%88%87%E5%9B%BE%E5%8D%8F%E4%BD%9C%E6%96%B9%E5%BC%8F/&name=icon、切图维护/协作方式问题解决&description=&lt;hr&gt;"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://hubzyy.gitee.io/%E6%96%87%E7%AB%A0/%E5%88%87%E5%9B%BE%E5%8D%8F%E4%BD%9C%E6%96%B9%E5%BC%8F/&t=icon、切图维护/协作方式问题解决"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li> -->
+
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <span id="menu" Popup="#nav-footer" class="icon"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> 菜单</span>
+        <span id="toc" Popup="#toc-footer" class="icon"><i class="fas fa-list fa-lg" aria-hidden="true"></i> 目录</span>
+        <span id="share" Popup="#share-footer" class="icon"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> 分享</span>
+        <span id="top" Popup="" style="display:none" class="icon" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</span>
+    </div>
+
+  </div>
+</div>
+
+            <!-- 图片弹窗 -->
+            <div class="img-pup" style="display: none;">
+              <img>
+            </div>
+          
+
+          <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2020-2023
+    hubzy
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/blog/">首页</a></li>
+         
+          <li><a href="/blog/categories/%E9%A1%B9%E7%9B%AE/">项目</a></li>
+         
+          <li><a href="/blog/archives/">归档</a></li>
+         
+          <li><a href="/blog/about/">关于</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+          <!-- jquery -->
+ 
+  
+<script src="/blog/lib/jquery/jquery.min.js"></script>
+
+
+
+<script src="/blog/lib/jquery/jquery.pjax.js"></script>
+
+
+
+<!-- clipboard -->
+
+   
+    
+<script src="/blog/lib/clipboard/clipboard.min.js"></script>
+
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"复制到粘贴板!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "复制成功!");
+      e.clearSelection();
+      setTimeout(()=>{
+        e.trigger.setAttribute('aria-label', "复制到粘贴板!");
+      },1500)
+    })
+  })
+  </script>
+
+
+<script src="/blog/js/main.js"></script>
+
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Umami Analytics -->
+
+<!-- Disqus Comments -->
+
+     
+      </div>   
+    </div>
+      
+
+    </body>
+    </html>

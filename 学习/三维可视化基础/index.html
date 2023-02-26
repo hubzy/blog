@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang=zh-CN>
+  <head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="坐标系三维空间中的元素是通过坐标系来计算位置，而设计坐标系与开发坐标系Z轴方向相反。 设计坐标系在设计坐标系中是左手坐标系（C4D）X轴指向右侧、Y轴指向上方、Z指向屏幕内。  开发坐标系在ThreeJS中是右手坐标系，X轴指向右侧、Y轴指向上方、Z指向屏幕外。  WebGLWebGL-前端框架ThreeJS：右手坐标系，对WebGL封装好，简化了开发，降低了成本，上手后可应对大部分需求，合适场景">
+<meta property="og:type" content="article">
+<meta property="og:title" content="三维可视化基础知识">
+<meta property="og:url" content="https://hubzyy.gitee.io/%E5%AD%A6%E4%B9%A0/%E4%B8%89%E7%BB%B4%E5%8F%AF%E8%A7%86%E5%8C%96%E5%9F%BA%E7%A1%80/index.html">
+<meta property="og:site_name" content="Hubzy">
+<meta property="og:description" content="坐标系三维空间中的元素是通过坐标系来计算位置，而设计坐标系与开发坐标系Z轴方向相反。 设计坐标系在设计坐标系中是左手坐标系（C4D）X轴指向右侧、Y轴指向上方、Z指向屏幕内。  开发坐标系在ThreeJS中是右手坐标系，X轴指向右侧、Y轴指向上方、Z指向屏幕外。  WebGLWebGL-前端框架ThreeJS：右手坐标系，对WebGL封装好，简化了开发，降低了成本，上手后可应对大部分需求，合适场景">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://hubzyy.gitee.io/blog/%E5%AD%A6%E4%B9%A0/%E4%B8%89%E7%BB%B4%E5%8F%AF%E8%A7%86%E5%8C%96%E5%9F%BA%E7%A1%80/image-20220811143844376.png">
+<meta property="og:image" content="https://hubzyy.gitee.io/blog/%E5%AD%A6%E4%B9%A0/%E4%B8%89%E7%BB%B4%E5%8F%AF%E8%A7%86%E5%8C%96%E5%9F%BA%E7%A1%80/image-20220811144134604.png">
+<meta property="og:image" content="https://hubzyy.gitee.io/blog/%E5%AD%A6%E4%B9%A0/%E4%B8%89%E7%BB%B4%E5%8F%AF%E8%A7%86%E5%8C%96%E5%9F%BA%E7%A1%80/image-20220811145249462.png">
+<meta property="og:image" content="https://hubzyy.gitee.io/blog/%E5%AD%A6%E4%B9%A0/%E4%B8%89%E7%BB%B4%E5%8F%AF%E8%A7%86%E5%8C%96%E5%9F%BA%E7%A1%80/image-20220811145606874.png">
+<meta property="article:published_time" content="2022-08-11T11:56:47.000Z">
+<meta property="article:modified_time" content="2022-10-15T21:14:15.229Z">
+<meta property="article:author" content="hubzy">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://hubzyy.gitee.io/blog/%E5%AD%A6%E4%B9%A0/%E4%B8%89%E7%BB%B4%E5%8F%AF%E8%A7%86%E5%8C%96%E5%9F%BA%E7%A1%80/image-20220811143844376.png">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/blog/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/blog/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    
+      <title>Hubzy·三维可视化基础知识</title>
+    
+    
+    <!-- styles -->
+
+    <!-- 默认CSS引入方法 -->
+    
+<link rel="stylesheet" href="/blog/css/layout.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+
+
+  
+  <!-- L2Dwidget -->
+  
+<script src="/blog/lib/live2d/L2Dwidget.min.js"></script>
+
+
+  <script>
+  // 猫
+  L2Dwidget.init({
+    model: {
+      jsonPath: "/blog/lib/live2d/tororo/assets/tororo.model.json",
+    },
+    display: {
+      superSample: 2,
+      width: 60,
+      height: 80,
+      position: 'right',
+      hOffset: 0,
+      vOffset: 20,
+    },
+    mobile: {
+      show: true,
+      scale: 1,
+      motion: true,
+    },
+    react: {
+      opacityDefault: 1,
+      opacityOnHover: 1,
+    }
+  })
+  //百度搜索爬虫
+
+
+
+var _hmt = _hmt || [];
+(function () {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7e9a19e5e700f1a2607b47c7bd6b35e8";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+
+  </script>
+  <meta name="baidu-site-verification" content="code-dIan6MAmy5" />
+  
+
+  <!-- styles -->
+
+
+ 
+  <link
+    rel="preload"
+    href="/blog/lib/font-awesome/css/all.min.css"
+    as="style"
+    onload="this.onload=null;this.rel='stylesheet'"
+  />
+  <noscript
+    ><link
+      rel="stylesheet"
+      href="/blog/lib/font-awesome/css/all.min.css"
+  /></noscript>
+
+
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+    <body class="max-width mx-auto">
+     <div class="home">
+        <!-- //actions_desktop 右上角导航栏 -->
+      <aside id="#aside" class="hubzy_left">
+        
+          <div class="hubzy_logo">
+	<a href="/blog/">
+		
+		  
+					<div id="logo" style="background-image: url(/blog/images/logo.png);"></div>
+					
+					  
+	  </a>
+	  <div id="title">
+		<a href="/blog/">
+		  <h1>
+			Hubzy
+		  </h1>
+		</a>
+	  </div>
+</div>
+<!-- 搜索栏 -->
+<div id="search">
+	<input class="search-input" type="text" placeholder="search">
+	<span id="search-icon" class="fa fa-bars" title="展开目录"></span>
+</div>
+
+<!-- 侧边目录栏 -->
+<div id="tree">
+	
+
+	
+					<ul>
+						<li class="directory">
+							<a href="#" class="directory">
+								<i class="fa fa-folder"></i>
+								AE
+							</a>
+							
+					<ul>
+						<li class="file">
+							<a href="/blog/AE/AE勾画效果/">
+								<i class="fa fa-file"></i>
+								AE勾画效果
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/AE/AE语言切换/">
+								<i class="fa fa-file"></i>
+								AE语言切换
+							</a>
+						</li>
+					</ul>
+	
+						</li>
+						
+					</ul>
+	
+					<ul>
+						<li class="directory">
+							<a href="#" class="directory">
+								<i class="fa fa-folder"></i>
+								C4D
+							</a>
+							
+					<ul>
+						<li class="file">
+							<a href="/blog/C4D/Blender批量转换格式脚本/">
+								<i class="fa fa-file"></i>
+								Blender批量转换格式脚本
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/C4D/C4D全息科技线条效果/">
+								<i class="fa fa-file"></i>
+								C4D全息科技线条效果
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/C4D/QuadRemesher/">
+								<i class="fa fa-file"></i>
+								QuadRemesher
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/C4D/建模规范指南/">
+								<i class="fa fa-file"></i>
+								建模规范指南
+							</a>
+						</li>
+					</ul>
+	
+						</li>
+						
+					</ul>
+	
+					<ul>
+						<li class="directory">
+							<a href="#" class="directory">
+								<i class="fa fa-folder"></i>
+								UE
+							</a>
+							
+					<ul>
+						<li class="file">
+							<a href="/blog/UE/UE5基本操作笔记/">
+								<i class="fa fa-file"></i>
+								UE5基本操作笔记
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/UE/UE5工业场景项目打包/">
+								<i class="fa fa-file"></i>
+								UE5工业场景项目打包
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/UE/Ue5/">
+								<i class="fa fa-file"></i>
+								Ue5
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/UE/工业场景数据可视化UE5/">
+								<i class="fa fa-file"></i>
+								工业场景数据可视化UE5
+							</a>
+						</li>
+					</ul>
+	
+						</li>
+						
+					</ul>
+	
+					<ul>
+						<li class="directory">
+							<a href="#" class="directory">
+								<i class="fa fa-folder"></i>
+								其它
+							</a>
+							
+					<ul>
+						<li class="file">
+							<a href="/blog/其它/Hexo使用说明/">
+								<i class="fa fa-file"></i>
+								Hexo使用说明
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/其它/Markdown新手指南/">
+								<i class="fa fa-file"></i>
+								Markdown新手指南
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/其它/git配置/">
+								<i class="fa fa-file"></i>
+								git配置
+							</a>
+						</li>
+					</ul>
+	
+						</li>
+						
+					</ul>
+	
+					<ul>
+						<li class="directory">
+							<a href="#" class="directory">
+								<i class="fa fa-folder"></i>
+								学习
+							</a>
+							
+					<ul>
+						<li class="file">
+							<a href="/blog/学习/Lottie笔记/">
+								<i class="fa fa-file"></i>
+								Lottie笔记
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/学习/QGIS/">
+								<i class="fa fa-file"></i>
+								QGIS
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file active">
+							<a href="/blog/学习/三维可视化基础/">
+								<i class="fa fa-file"></i>
+								三维可视化基础
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/学习/模型生产规范/">
+								<i class="fa fa-file"></i>
+								模型生产规范
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/学习/电影-风平浪静/">
+								<i class="fa fa-file"></i>
+								电影-风平浪静
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="directory">
+							<a href="#" class="directory">
+								<i class="fa fa-folder"></i>
+								看完的书籍
+							</a>
+							
+					<ul>
+						<li class="file">
+							<a href="/blog/学习/看完的书籍/写给大家看的设计书/">
+								<i class="fa fa-file"></i>
+								写给大家看的设计书
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/学习/看完的书籍/破茧成蝶/">
+								<i class="fa fa-file"></i>
+								破茧成蝶
+							</a>
+						</li>
+					</ul>
+	
+						</li>
+						
+					</ul>
+	
+						</li>
+						
+					</ul>
+	
+					<ul>
+						<li class="directory">
+							<a href="#" class="directory">
+								<i class="fa fa-folder"></i>
+								文章
+							</a>
+							
+					<ul>
+						<li class="file">
+							<a href="/blog/文章/Lotte动画/">
+								<i class="fa fa-file"></i>
+								Lotte动画
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/文章/PC端设计稿适配问题/">
+								<i class="fa fa-file"></i>
+								PC端设计稿适配问题
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/文章/SketchMeaXure/">
+								<i class="fa fa-file"></i>
+								SketchMeaXure
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/文章/sketch在标签页打开文件默认合并窗口/">
+								<i class="fa fa-file"></i>
+								sketch在标签页打开文件默认合并窗口
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/文章/sketch插件制作/">
+								<i class="fa fa-file"></i>
+								sketch插件制作
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/文章/sketch预览显示连接错误解决方案/">
+								<i class="fa fa-file"></i>
+								sketch预览显示连接错误解决方案
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/文章/切图协作方式/">
+								<i class="fa fa-file"></i>
+								切图协作方式
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/文章/序列帧动画踩坑落地/">
+								<i class="fa fa-file"></i>
+								序列帧动画踩坑落地
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/文章/数据可视化之图表选择/">
+								<i class="fa fa-file"></i>
+								数据可视化之图表选择
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/文章/杭州数据可视化大屏设计/">
+								<i class="fa fa-file"></i>
+								杭州数据可视化大屏设计
+							</a>
+						</li>
+					</ul>
+	
+						</li>
+						
+					</ul>
+	
+					<ul>
+						<li class="directory">
+							<a href="#" class="directory">
+								<i class="fa fa-folder"></i>
+								脚本
+							</a>
+							
+					<ul>
+						<li class="file">
+							<a href="/blog/脚本/Mac移动硬盘/">
+								<i class="fa fa-file"></i>
+								Mac移动硬盘
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/脚本/gitPage更新脚本/">
+								<i class="fa fa-file"></i>
+								gitPage更新脚本
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/脚本/notion汉化脚本/">
+								<i class="fa fa-file"></i>
+								notion汉化脚本
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/脚本/书签脚本/">
+								<i class="fa fa-file"></i>
+								书签脚本
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/脚本/常用终端命令/">
+								<i class="fa fa-file"></i>
+								常用终端命令
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/脚本/微信阅读自动滚动、沉浸式阅读/">
+								<i class="fa fa-file"></i>
+								微信阅读自动滚动、沉浸式阅读
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/脚本/搞定设计、创客贴 油猴插件/">
+								<i class="fa fa-file"></i>
+								搞定设计、创客贴 油猴插件
+							</a>
+						</li>
+					</ul>
+	
+						</li>
+						
+					</ul>
+	
+</div>
+
+        
+      </aside>
+      <div id="header-post" class="hubzy_right">
+        
+          
+  <!-- <a id="menu-icon" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a> -->
+  <!-- <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a> -->
+  <a id="top-icon-tablet" href="#" "Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"
+    style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        
+          <li><a href="/blog/">
+              首页
+            </a></li>
+          
+          <li><a href="/blog/categories/%E9%A1%B9%E7%9B%AE/">
+              项目
+            </a></li>
+          
+          <li><a href="/blog/archives/">
+              归档
+            </a></li>
+          
+          <li><a href="/blog/about/">
+              关于
+            </a></li>
+          
+      </ul>
+    </span>
+    <br />
+    <div id="toc">
+      
+    </div>
+    <br />
+    <span id="actions">
+      <ul>
+        
+          <li><a class="icon" aria-label="上一篇 " href="/blog/C4D/%E5%BB%BA%E6%A8%A1%E8%A7%84%E8%8C%83%E6%8C%87%E5%8D%97/"><i
+                class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();"
+                onmouseout="$('#i-prev').toggle();"></i></a></li>
+          
+            
+              <li><a class="icon" aria-label="下一篇 " href="/blog/UE/Ue5/"><i
+                    class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();"
+                    onmouseout="$('#i-next').toggle();"></i></a></li>
+              
+                <li><a class="icon" aria-label="返回顶部 " href="#"
+                    onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up"
+                      aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a>
+                </li>
+                <li><a class="icon" aria-label="分享文章 " href="#"><i class="fas fa-share-alt"
+                      aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();"
+                      onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">
+        上一篇
+      </span>
+      <span id="i-next" class="info" style="display:none;">
+        下一篇
+      </span>
+      <span id="i-top" class="info" style="display:none;">
+        返回顶部
+      </span>
+      <span id="i-share" class="info" style="display:none;">
+        分享文章
+      </span>
+    </span>
+    <br />
+    <div id="share" style="display: none">
+      <ul>
+  <li> 开发中. </li>
+  <!-- <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://hubzyy.gitee.io/%E5%AD%A6%E4%B9%A0/%E4%B8%89%E7%BB%B4%E5%8F%AF%E8%A7%86%E5%8C%96%E5%9F%BA%E7%A1%80/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://hubzyy.gitee.io/%E5%AD%A6%E4%B9%A0/%E4%B8%89%E7%BB%B4%E5%8F%AF%E8%A7%86%E5%8C%96%E5%9F%BA%E7%A1%80/&text=三维可视化基础知识"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://hubzyy.gitee.io/%E5%AD%A6%E4%B9%A0/%E4%B8%89%E7%BB%B4%E5%8F%AF%E8%A7%86%E5%8C%96%E5%9F%BA%E7%A1%80/&title=三维可视化基础知识"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://hubzyy.gitee.io/%E5%AD%A6%E4%B9%A0/%E4%B8%89%E7%BB%B4%E5%8F%AF%E8%A7%86%E5%8C%96%E5%9F%BA%E7%A1%80/&is_video=false&description=三维可视化基础知识"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=三维可视化基础知识&body=Check out this article: https://hubzyy.gitee.io/%E5%AD%A6%E4%B9%A0/%E4%B8%89%E7%BB%B4%E5%8F%AF%E8%A7%86%E5%8C%96%E5%9F%BA%E7%A1%80/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://hubzyy.gitee.io/%E5%AD%A6%E4%B9%A0/%E4%B8%89%E7%BB%B4%E5%8F%AF%E8%A7%86%E5%8C%96%E5%9F%BA%E7%A1%80/&title=三维可视化基础知识"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://hubzyy.gitee.io/%E5%AD%A6%E4%B9%A0/%E4%B8%89%E7%BB%B4%E5%8F%AF%E8%A7%86%E5%8C%96%E5%9F%BA%E7%A1%80/&title=三维可视化基础知识"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://hubzyy.gitee.io/%E5%AD%A6%E4%B9%A0/%E4%B8%89%E7%BB%B4%E5%8F%AF%E8%A7%86%E5%8C%96%E5%9F%BA%E7%A1%80/&title=三维可视化基础知识"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://hubzyy.gitee.io/%E5%AD%A6%E4%B9%A0/%E4%B8%89%E7%BB%B4%E5%8F%AF%E8%A7%86%E5%8C%96%E5%9F%BA%E7%A1%80/&title=三维可视化基础知识"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://hubzyy.gitee.io/%E5%AD%A6%E4%B9%A0/%E4%B8%89%E7%BB%B4%E5%8F%AF%E8%A7%86%E5%8C%96%E5%9F%BA%E7%A1%80/&name=三维可视化基础知识&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://hubzyy.gitee.io/%E5%AD%A6%E4%B9%A0/%E4%B8%89%E7%BB%B4%E5%8F%AF%E8%A7%86%E5%8C%96%E5%9F%BA%E7%A1%80/&t=三维可视化基础知识"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li> -->
+
+</ul>
+
+    </div>
+
+  </span>
+
+        
+      </div>
+       
+      <div class="content  hubzy_center">
+        
+          <!-- //body 引入首页和md编译后的页面 -->
+          <!-- md 编译成 html 后的文件模板 -->
+
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="hubzy_center_title">
+    
+    <h1 class="posttitle" itemprop="name headline">
+        三维可视化基础知识
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">hubzy</span>
+      </span>
+      <!-- 文章时间和首页时间 -->
+
+    <div class="postdate">
+      
+        <time datetime="2022-08-11T11:56:47.000Z" itemprop="datePublished">2022-08-11</time>
+        
+        <!-- (Updated: <time datetime="2022-10-15T21:14:15.229Z" itemprop="dateModified">2022-10-16</time>) -->
+        
+      
+    </div>
+
+
+      
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content conterDiy"  id="article" itemprop="articleBody">
+    <h2 id="坐标系"><a href="#坐标系" class="headerlink" title="坐标系"></a>坐标系</h2><p>三维空间中的元素是通过坐标系来计算位置，而设计坐标系与开发坐标系Z轴方向相反。</p>
+<h3 id="设计坐标系"><a href="#设计坐标系" class="headerlink" title="设计坐标系"></a>设计坐标系</h3><p>在设计坐标系中是左手坐标系（C4D）X轴指向右侧、Y轴指向上方、Z指向屏幕内。</p>
+<p><img src="/blog/%E5%AD%A6%E4%B9%A0/%E4%B8%89%E7%BB%B4%E5%8F%AF%E8%A7%86%E5%8C%96%E5%9F%BA%E7%A1%80/image-20220811143844376.png" alt="image-20220811143844376"></p>
+<h3 id="开发坐标系"><a href="#开发坐标系" class="headerlink" title="开发坐标系"></a>开发坐标系</h3><p>在ThreeJS中是右手坐标系，X轴指向右侧、Y轴指向上方、Z指向屏幕外。</p>
+<p><img src="/blog/%E5%AD%A6%E4%B9%A0/%E4%B8%89%E7%BB%B4%E5%8F%AF%E8%A7%86%E5%8C%96%E5%9F%BA%E7%A1%80/image-20220811144134604.png" alt="image-20220811144134604"></p>
+<h2 id="WebGL"><a href="#WebGL" class="headerlink" title="WebGL"></a>WebGL</h2><h3 id="WebGL-前端框架"><a href="#WebGL-前端框架" class="headerlink" title="WebGL-前端框架"></a>WebGL-前端框架</h3><p>ThreeJS：右手坐标系，对WebGL封装好，简化了开发，降低了成本，上手后可应对大部分需求，合适场景动画；<br>BabylonJS：左手坐标系，更合适做游戏，碰撞检测十分易用；<br>CesiumJS：创建具有高性能、精度、视觉质量且易用的3D地图，GIS项目用的多<br>SceneJS：特别适合高精度细节的模型需求，如工程学和医学上的高精度模型。</p>
+<h3 id="WebGL-引擎框架"><a href="#WebGL-引擎框架" class="headerlink" title="WebGL-引擎框架"></a>WebGL-引擎框架</h3><p>UE4：c++编写，可用引擎编辑器开发调试，内置方法、组件，功能完善。它的蓝图系统更是让非编程人员得心应手，还有shader的可视化工具，比起前端框架省掉了不少麻烦。UE4在任何平台输出都是效果最好的哪个，但WebGL性能一般；<br>Unity3D：用typescript或c#编写，同UE4，编辑开发调试，方法，简单上手学习成本低。因支持typescript，对前端友好，相比UE4擅长在低级设备流畅运行，低成本；</p>
+<h2 id="Three-JS"><a href="#Three-JS" class="headerlink" title="Three.JS"></a>Three.JS</h2><p>ThreeJS：允许使用JavaScript创建网页中的GPU加速的3D动画元素，而不是使用特定的浏览器插件。<br>Sence场景: 三维空间，放置模型、灯光和摄像机等，然后交给渲染器渲染；<br>Camera 摄像机:相当于人眼，便于看到场景中对象。通常有两种：<br>    PerspectiveCamera 透视像机，根据物体与摄像机的位置，距离，近大远小，可各轴向浏览对象；<br>    OrthographicCamera 正交像机，定义一个矩形区域，在这个区域可见，无论远近，渲染对象大小一致；<br>Renderer 渲染器:负责将场景的对象所有数据渲染绘制到HTMLcanvas上<br>Mesh网格:基于以三角形的多边形的物体，两部分组成：几何体和材质；<br>Geometry 几何体: 如立方体、球、平面、人、树、建筑等物体的顶点信息。<br>Material 材质: 描述对象的不同外观，他的定义和改变跟渲染器无关；</p>
+<p><img src="/blog/%E5%AD%A6%E4%B9%A0/%E4%B8%89%E7%BB%B4%E5%8F%AF%E8%A7%86%E5%8C%96%E5%9F%BA%E7%A1%80/image-20220811145249462.png" alt="image-20220811145249462"></p>
+<p>Texture 纹理: 纹理贴图，将其应用到一个表面，或者作为反射/折射贴图；</p>
+<h3 id="光源"><a href="#光源" class="headerlink" title="光源"></a>光源</h3><p>Light 光源: 眼睛需要光的反射看到物体对象，场景中必不可少的；<br>AmbientLight 环境光源，基础光源，为场景中的所有物体提供一个基础亮度。<br>PointLight 点光源，一个点向四周发出光源，一般用于灯泡。<br>SpotLight 聚光灯光源，一个圆锥体的灯光。<br>DirectionalLight 平行光源，模拟太阳月亮光，平行光源。<br>HemisphereLight 半球光源，只有圆球的半边会发出光源。</p>
+<p><img src="/blog/%E5%AD%A6%E4%B9%A0/%E4%B8%89%E7%BB%B4%E5%8F%AF%E8%A7%86%E5%8C%96%E5%9F%BA%E7%A1%80/image-20220811145606874.png" alt="image-20220811145606874"></p>
+<p>Shadow 阴影: 具有投射阴影的光,能对所有能被投射阴影的物体,从光源渲染阴影。<br>目前只有三种光可产生阴影；<br>DirectionalLight 平行光源 、PointLight 点光源 、SpotLight 聚光灯光源</p>
+<h3 id="导出格式"><a href="#导出格式" class="headerlink" title="导出格式"></a>导出格式</h3><p>glTF 模型格式: 用于通过引擎和应用程序高效传输和加载 3D 场景和模型。<br>glTF最大限度地减少了 3D 资产的大小，以及解压和使用它们所需的运行时处理。<br>glTF定义了一种可扩展的发布格式，通过在整个行业中实现 3D 内容的互操作使用来简化创作工作流程和交互式服务。（gltf/glb）</p>
+
+  </div>
+</article>
+
+
+
+
+          
+          <!-- //actions_mobile 移动端导航栏 -->
+            <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" class="Popup" style="display: none">
+      <ul>
+         
+          <li><a href="/blog/">首页</a></li>
+         
+          <li><a href="/blog/categories/%E9%A1%B9%E7%9B%AE/">项目</a></li>
+         
+          <li><a href="/blog/archives/">归档</a></li>
+         
+          <li><a href="/blog/about/">关于</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer"  class="Popup" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9D%90%E6%A0%87%E7%B3%BB"><span class="toc-number">1.</span> <span class="toc-text">坐标系</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BE%E8%AE%A1%E5%9D%90%E6%A0%87%E7%B3%BB"><span class="toc-number">1.1.</span> <span class="toc-text">设计坐标系</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%80%E5%8F%91%E5%9D%90%E6%A0%87%E7%B3%BB"><span class="toc-number">1.2.</span> <span class="toc-text">开发坐标系</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#WebGL"><span class="toc-number">2.</span> <span class="toc-text">WebGL</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#WebGL-%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6"><span class="toc-number">2.1.</span> <span class="toc-text">WebGL-前端框架</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#WebGL-%E5%BC%95%E6%93%8E%E6%A1%86%E6%9E%B6"><span class="toc-number">2.2.</span> <span class="toc-text">WebGL-引擎框架</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Three-JS"><span class="toc-number">3.</span> <span class="toc-text">Three.JS</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%89%E6%BA%90"><span class="toc-number">3.1.</span> <span class="toc-text">光源</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%BC%E5%87%BA%E6%A0%BC%E5%BC%8F"><span class="toc-number">3.2.</span> <span class="toc-text">导出格式</span></a></li></ol></li></ol>
+    </div>
+
+    <div id="share-footer"  class="Popup" style="display: none">
+      <ul>
+  <li> 开发中. </li>
+  <!-- <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://hubzyy.gitee.io/%E5%AD%A6%E4%B9%A0/%E4%B8%89%E7%BB%B4%E5%8F%AF%E8%A7%86%E5%8C%96%E5%9F%BA%E7%A1%80/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://hubzyy.gitee.io/%E5%AD%A6%E4%B9%A0/%E4%B8%89%E7%BB%B4%E5%8F%AF%E8%A7%86%E5%8C%96%E5%9F%BA%E7%A1%80/&text=三维可视化基础知识"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://hubzyy.gitee.io/%E5%AD%A6%E4%B9%A0/%E4%B8%89%E7%BB%B4%E5%8F%AF%E8%A7%86%E5%8C%96%E5%9F%BA%E7%A1%80/&title=三维可视化基础知识"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://hubzyy.gitee.io/%E5%AD%A6%E4%B9%A0/%E4%B8%89%E7%BB%B4%E5%8F%AF%E8%A7%86%E5%8C%96%E5%9F%BA%E7%A1%80/&is_video=false&description=三维可视化基础知识"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=三维可视化基础知识&body=Check out this article: https://hubzyy.gitee.io/%E5%AD%A6%E4%B9%A0/%E4%B8%89%E7%BB%B4%E5%8F%AF%E8%A7%86%E5%8C%96%E5%9F%BA%E7%A1%80/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://hubzyy.gitee.io/%E5%AD%A6%E4%B9%A0/%E4%B8%89%E7%BB%B4%E5%8F%AF%E8%A7%86%E5%8C%96%E5%9F%BA%E7%A1%80/&title=三维可视化基础知识"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://hubzyy.gitee.io/%E5%AD%A6%E4%B9%A0/%E4%B8%89%E7%BB%B4%E5%8F%AF%E8%A7%86%E5%8C%96%E5%9F%BA%E7%A1%80/&title=三维可视化基础知识"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://hubzyy.gitee.io/%E5%AD%A6%E4%B9%A0/%E4%B8%89%E7%BB%B4%E5%8F%AF%E8%A7%86%E5%8C%96%E5%9F%BA%E7%A1%80/&title=三维可视化基础知识"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://hubzyy.gitee.io/%E5%AD%A6%E4%B9%A0/%E4%B8%89%E7%BB%B4%E5%8F%AF%E8%A7%86%E5%8C%96%E5%9F%BA%E7%A1%80/&title=三维可视化基础知识"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://hubzyy.gitee.io/%E5%AD%A6%E4%B9%A0/%E4%B8%89%E7%BB%B4%E5%8F%AF%E8%A7%86%E5%8C%96%E5%9F%BA%E7%A1%80/&name=三维可视化基础知识&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://hubzyy.gitee.io/%E5%AD%A6%E4%B9%A0/%E4%B8%89%E7%BB%B4%E5%8F%AF%E8%A7%86%E5%8C%96%E5%9F%BA%E7%A1%80/&t=三维可视化基础知识"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li> -->
+
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <span id="menu" Popup="#nav-footer" class="icon"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> 菜单</span>
+        <span id="toc" Popup="#toc-footer" class="icon"><i class="fas fa-list fa-lg" aria-hidden="true"></i> 目录</span>
+        <span id="share" Popup="#share-footer" class="icon"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> 分享</span>
+        <span id="top" Popup="" style="display:none" class="icon" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</span>
+    </div>
+
+  </div>
+</div>
+
+            <!-- 图片弹窗 -->
+            <div class="img-pup" style="display: none;">
+              <img>
+            </div>
+          
+
+          <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2020-2023
+    hubzy
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/blog/">首页</a></li>
+         
+          <li><a href="/blog/categories/%E9%A1%B9%E7%9B%AE/">项目</a></li>
+         
+          <li><a href="/blog/archives/">归档</a></li>
+         
+          <li><a href="/blog/about/">关于</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+          <!-- jquery -->
+ 
+  
+<script src="/blog/lib/jquery/jquery.min.js"></script>
+
+
+
+<script src="/blog/lib/jquery/jquery.pjax.js"></script>
+
+
+
+<!-- clipboard -->
+
+   
+    
+<script src="/blog/lib/clipboard/clipboard.min.js"></script>
+
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"复制到粘贴板!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "复制成功!");
+      e.clearSelection();
+      setTimeout(()=>{
+        e.trigger.setAttribute('aria-label', "复制到粘贴板!");
+      },1500)
+    })
+  })
+  </script>
+
+
+<script src="/blog/js/main.js"></script>
+
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Umami Analytics -->
+
+<!-- Disqus Comments -->
+
+     
+      </div>   
+    </div>
+      
+
+    </body>
+    </html>

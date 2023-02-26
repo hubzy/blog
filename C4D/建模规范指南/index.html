@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang=zh-CN>
+  <head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="建模规范指南模型大小具体对象我们要1:1，实际尺寸建模、不知道尺寸或抽象对象可按比例建模 环境设置单位（厘米）、帧数（30）、背景参考（视图）、建模（捕捉、量化，网格检查）、渲染输出设置（尺寸、帧频范围、输出格式、目录等） 目录命名文件目录：（01_C4D源文件、02_模型Mesh、03_动画脚本、04_渲染效果、05_素材) 文件名称：（01 _某场景 _某对象_日期.文件格式） 坐标位置场景默">
+<meta property="og:type" content="article">
+<meta property="og:title" content="建模规范指南">
+<meta property="og:url" content="https://hubzyy.gitee.io/C4D/%E5%BB%BA%E6%A8%A1%E8%A7%84%E8%8C%83%E6%8C%87%E5%8D%97/index.html">
+<meta property="og:site_name" content="Hubzy">
+<meta property="og:description" content="建模规范指南模型大小具体对象我们要1:1，实际尺寸建模、不知道尺寸或抽象对象可按比例建模 环境设置单位（厘米）、帧数（30）、背景参考（视图）、建模（捕捉、量化，网格检查）、渲染输出设置（尺寸、帧频范围、输出格式、目录等） 目录命名文件目录：（01_C4D源文件、02_模型Mesh、03_动画脚本、04_渲染效果、05_素材) 文件名称：（01 _某场景 _某对象_日期.文件格式） 坐标位置场景默">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://hubzyy.gitee.io/blog/C4D/%E5%BB%BA%E6%A8%A1%E8%A7%84%E8%8C%83%E6%8C%87%E5%8D%97/image-20230207010308080.jpg">
+<meta property="og:image" content="https://hubzyy.gitee.io/blog/C4D/%E5%BB%BA%E6%A8%A1%E8%A7%84%E8%8C%83%E6%8C%87%E5%8D%97/image-20230207010319693.png">
+<meta property="og:image" content="https://hubzyy.gitee.io/blog/C4D/%E5%BB%BA%E6%A8%A1%E8%A7%84%E8%8C%83%E6%8C%87%E5%8D%97/image-20230207010359133.png">
+<meta property="article:published_time" content="2022-08-11T11:56:47.000Z">
+<meta property="article:modified_time" content="2023-02-06T17:15:33.000Z">
+<meta property="article:author" content="hubzy">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://hubzyy.gitee.io/blog/C4D/%E5%BB%BA%E6%A8%A1%E8%A7%84%E8%8C%83%E6%8C%87%E5%8D%97/image-20230207010308080.jpg">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/blog/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/blog/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    
+      <title>Hubzy·建模规范指南</title>
+    
+    
+    <!-- styles -->
+
+    <!-- 默认CSS引入方法 -->
+    
+<link rel="stylesheet" href="/blog/css/layout.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+
+
+  
+  <!-- L2Dwidget -->
+  
+<script src="/blog/lib/live2d/L2Dwidget.min.js"></script>
+
+
+  <script>
+  // 猫
+  L2Dwidget.init({
+    model: {
+      jsonPath: "/blog/lib/live2d/tororo/assets/tororo.model.json",
+    },
+    display: {
+      superSample: 2,
+      width: 60,
+      height: 80,
+      position: 'right',
+      hOffset: 0,
+      vOffset: 20,
+    },
+    mobile: {
+      show: true,
+      scale: 1,
+      motion: true,
+    },
+    react: {
+      opacityDefault: 1,
+      opacityOnHover: 1,
+    }
+  })
+  //百度搜索爬虫
+
+
+
+var _hmt = _hmt || [];
+(function () {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7e9a19e5e700f1a2607b47c7bd6b35e8";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+
+  </script>
+  <meta name="baidu-site-verification" content="code-dIan6MAmy5" />
+  
+
+  <!-- styles -->
+
+
+ 
+  <link
+    rel="preload"
+    href="/blog/lib/font-awesome/css/all.min.css"
+    as="style"
+    onload="this.onload=null;this.rel='stylesheet'"
+  />
+  <noscript
+    ><link
+      rel="stylesheet"
+      href="/blog/lib/font-awesome/css/all.min.css"
+  /></noscript>
+
+
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+    <body class="max-width mx-auto">
+     <div class="home">
+        <!-- //actions_desktop 右上角导航栏 -->
+      <aside id="#aside" class="hubzy_left">
+        
+          <div class="hubzy_logo">
+	<a href="/blog/">
+		
+		  
+					<div id="logo" style="background-image: url(/blog/images/logo.png);"></div>
+					
+					  
+	  </a>
+	  <div id="title">
+		<a href="/blog/">
+		  <h1>
+			Hubzy
+		  </h1>
+		</a>
+	  </div>
+</div>
+<!-- 搜索栏 -->
+<div id="search">
+	<input class="search-input" type="text" placeholder="search">
+	<span id="search-icon" class="fa fa-bars" title="展开目录"></span>
+</div>
+
+<!-- 侧边目录栏 -->
+<div id="tree">
+	
+
+	
+					<ul>
+						<li class="directory">
+							<a href="#" class="directory">
+								<i class="fa fa-folder"></i>
+								AE
+							</a>
+							
+					<ul>
+						<li class="file">
+							<a href="/blog/AE/AE勾画效果/">
+								<i class="fa fa-file"></i>
+								AE勾画效果
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/AE/AE语言切换/">
+								<i class="fa fa-file"></i>
+								AE语言切换
+							</a>
+						</li>
+					</ul>
+	
+						</li>
+						
+					</ul>
+	
+					<ul>
+						<li class="directory">
+							<a href="#" class="directory">
+								<i class="fa fa-folder"></i>
+								C4D
+							</a>
+							
+					<ul>
+						<li class="file">
+							<a href="/blog/C4D/Blender批量转换格式脚本/">
+								<i class="fa fa-file"></i>
+								Blender批量转换格式脚本
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/C4D/C4D全息科技线条效果/">
+								<i class="fa fa-file"></i>
+								C4D全息科技线条效果
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/C4D/QuadRemesher/">
+								<i class="fa fa-file"></i>
+								QuadRemesher
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file active">
+							<a href="/blog/C4D/建模规范指南/">
+								<i class="fa fa-file"></i>
+								建模规范指南
+							</a>
+						</li>
+					</ul>
+	
+						</li>
+						
+					</ul>
+	
+					<ul>
+						<li class="directory">
+							<a href="#" class="directory">
+								<i class="fa fa-folder"></i>
+								UE
+							</a>
+							
+					<ul>
+						<li class="file">
+							<a href="/blog/UE/UE5基本操作笔记/">
+								<i class="fa fa-file"></i>
+								UE5基本操作笔记
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/UE/UE5工业场景项目打包/">
+								<i class="fa fa-file"></i>
+								UE5工业场景项目打包
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/UE/Ue5/">
+								<i class="fa fa-file"></i>
+								Ue5
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/UE/工业场景数据可视化UE5/">
+								<i class="fa fa-file"></i>
+								工业场景数据可视化UE5
+							</a>
+						</li>
+					</ul>
+	
+						</li>
+						
+					</ul>
+	
+					<ul>
+						<li class="directory">
+							<a href="#" class="directory">
+								<i class="fa fa-folder"></i>
+								其它
+							</a>
+							
+					<ul>
+						<li class="file">
+							<a href="/blog/其它/Hexo使用说明/">
+								<i class="fa fa-file"></i>
+								Hexo使用说明
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/其它/Markdown新手指南/">
+								<i class="fa fa-file"></i>
+								Markdown新手指南
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/其它/git配置/">
+								<i class="fa fa-file"></i>
+								git配置
+							</a>
+						</li>
+					</ul>
+	
+						</li>
+						
+					</ul>
+	
+					<ul>
+						<li class="directory">
+							<a href="#" class="directory">
+								<i class="fa fa-folder"></i>
+								学习
+							</a>
+							
+					<ul>
+						<li class="file">
+							<a href="/blog/学习/Lottie笔记/">
+								<i class="fa fa-file"></i>
+								Lottie笔记
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/学习/QGIS/">
+								<i class="fa fa-file"></i>
+								QGIS
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/学习/三维可视化基础/">
+								<i class="fa fa-file"></i>
+								三维可视化基础
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/学习/模型生产规范/">
+								<i class="fa fa-file"></i>
+								模型生产规范
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/学习/电影-风平浪静/">
+								<i class="fa fa-file"></i>
+								电影-风平浪静
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="directory">
+							<a href="#" class="directory">
+								<i class="fa fa-folder"></i>
+								看完的书籍
+							</a>
+							
+					<ul>
+						<li class="file">
+							<a href="/blog/学习/看完的书籍/写给大家看的设计书/">
+								<i class="fa fa-file"></i>
+								写给大家看的设计书
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/学习/看完的书籍/破茧成蝶/">
+								<i class="fa fa-file"></i>
+								破茧成蝶
+							</a>
+						</li>
+					</ul>
+	
+						</li>
+						
+					</ul>
+	
+						</li>
+						
+					</ul>
+	
+					<ul>
+						<li class="directory">
+							<a href="#" class="directory">
+								<i class="fa fa-folder"></i>
+								文章
+							</a>
+							
+					<ul>
+						<li class="file">
+							<a href="/blog/文章/Lotte动画/">
+								<i class="fa fa-file"></i>
+								Lotte动画
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/文章/PC端设计稿适配问题/">
+								<i class="fa fa-file"></i>
+								PC端设计稿适配问题
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/文章/SketchMeaXure/">
+								<i class="fa fa-file"></i>
+								SketchMeaXure
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/文章/sketch在标签页打开文件默认合并窗口/">
+								<i class="fa fa-file"></i>
+								sketch在标签页打开文件默认合并窗口
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/文章/sketch插件制作/">
+								<i class="fa fa-file"></i>
+								sketch插件制作
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/文章/sketch预览显示连接错误解决方案/">
+								<i class="fa fa-file"></i>
+								sketch预览显示连接错误解决方案
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/文章/切图协作方式/">
+								<i class="fa fa-file"></i>
+								切图协作方式
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/文章/序列帧动画踩坑落地/">
+								<i class="fa fa-file"></i>
+								序列帧动画踩坑落地
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/文章/数据可视化之图表选择/">
+								<i class="fa fa-file"></i>
+								数据可视化之图表选择
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/文章/杭州数据可视化大屏设计/">
+								<i class="fa fa-file"></i>
+								杭州数据可视化大屏设计
+							</a>
+						</li>
+					</ul>
+	
+						</li>
+						
+					</ul>
+	
+					<ul>
+						<li class="directory">
+							<a href="#" class="directory">
+								<i class="fa fa-folder"></i>
+								脚本
+							</a>
+							
+					<ul>
+						<li class="file">
+							<a href="/blog/脚本/Mac移动硬盘/">
+								<i class="fa fa-file"></i>
+								Mac移动硬盘
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/脚本/gitPage更新脚本/">
+								<i class="fa fa-file"></i>
+								gitPage更新脚本
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/脚本/notion汉化脚本/">
+								<i class="fa fa-file"></i>
+								notion汉化脚本
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/脚本/书签脚本/">
+								<i class="fa fa-file"></i>
+								书签脚本
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/脚本/常用终端命令/">
+								<i class="fa fa-file"></i>
+								常用终端命令
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/脚本/微信阅读自动滚动、沉浸式阅读/">
+								<i class="fa fa-file"></i>
+								微信阅读自动滚动、沉浸式阅读
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/脚本/搞定设计、创客贴 油猴插件/">
+								<i class="fa fa-file"></i>
+								搞定设计、创客贴 油猴插件
+							</a>
+						</li>
+					</ul>
+	
+						</li>
+						
+					</ul>
+	
+</div>
+
+        
+      </aside>
+      <div id="header-post" class="hubzy_right">
+        
+          
+  <!-- <a id="menu-icon" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a> -->
+  <!-- <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a> -->
+  <a id="top-icon-tablet" href="#" "Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"
+    style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        
+          <li><a href="/blog/">
+              首页
+            </a></li>
+          
+          <li><a href="/blog/categories/%E9%A1%B9%E7%9B%AE/">
+              项目
+            </a></li>
+          
+          <li><a href="/blog/archives/">
+              归档
+            </a></li>
+          
+          <li><a href="/blog/about/">
+              关于
+            </a></li>
+          
+      </ul>
+    </span>
+    <br />
+    <div id="toc">
+      
+    </div>
+    <br />
+    <span id="actions">
+      <ul>
+        
+          <li><a class="icon" aria-label="上一篇 " href="/blog/%E5%AD%A6%E4%B9%A0/Lottie%E7%AC%94%E8%AE%B0/"><i
+                class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();"
+                onmouseout="$('#i-prev').toggle();"></i></a></li>
+          
+            
+              <li><a class="icon" aria-label="下一篇 " href="/blog/%E5%AD%A6%E4%B9%A0/%E4%B8%89%E7%BB%B4%E5%8F%AF%E8%A7%86%E5%8C%96%E5%9F%BA%E7%A1%80/"><i
+                    class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();"
+                    onmouseout="$('#i-next').toggle();"></i></a></li>
+              
+                <li><a class="icon" aria-label="返回顶部 " href="#"
+                    onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up"
+                      aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a>
+                </li>
+                <li><a class="icon" aria-label="分享文章 " href="#"><i class="fas fa-share-alt"
+                      aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();"
+                      onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">
+        上一篇
+      </span>
+      <span id="i-next" class="info" style="display:none;">
+        下一篇
+      </span>
+      <span id="i-top" class="info" style="display:none;">
+        返回顶部
+      </span>
+      <span id="i-share" class="info" style="display:none;">
+        分享文章
+      </span>
+    </span>
+    <br />
+    <div id="share" style="display: none">
+      <ul>
+  <li> 开发中. </li>
+  <!-- <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://hubzyy.gitee.io/C4D/%E5%BB%BA%E6%A8%A1%E8%A7%84%E8%8C%83%E6%8C%87%E5%8D%97/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://hubzyy.gitee.io/C4D/%E5%BB%BA%E6%A8%A1%E8%A7%84%E8%8C%83%E6%8C%87%E5%8D%97/&text=建模规范指南"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://hubzyy.gitee.io/C4D/%E5%BB%BA%E6%A8%A1%E8%A7%84%E8%8C%83%E6%8C%87%E5%8D%97/&title=建模规范指南"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://hubzyy.gitee.io/C4D/%E5%BB%BA%E6%A8%A1%E8%A7%84%E8%8C%83%E6%8C%87%E5%8D%97/&is_video=false&description=建模规范指南"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=建模规范指南&body=Check out this article: https://hubzyy.gitee.io/C4D/%E5%BB%BA%E6%A8%A1%E8%A7%84%E8%8C%83%E6%8C%87%E5%8D%97/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://hubzyy.gitee.io/C4D/%E5%BB%BA%E6%A8%A1%E8%A7%84%E8%8C%83%E6%8C%87%E5%8D%97/&title=建模规范指南"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://hubzyy.gitee.io/C4D/%E5%BB%BA%E6%A8%A1%E8%A7%84%E8%8C%83%E6%8C%87%E5%8D%97/&title=建模规范指南"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://hubzyy.gitee.io/C4D/%E5%BB%BA%E6%A8%A1%E8%A7%84%E8%8C%83%E6%8C%87%E5%8D%97/&title=建模规范指南"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://hubzyy.gitee.io/C4D/%E5%BB%BA%E6%A8%A1%E8%A7%84%E8%8C%83%E6%8C%87%E5%8D%97/&title=建模规范指南"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://hubzyy.gitee.io/C4D/%E5%BB%BA%E6%A8%A1%E8%A7%84%E8%8C%83%E6%8C%87%E5%8D%97/&name=建模规范指南&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://hubzyy.gitee.io/C4D/%E5%BB%BA%E6%A8%A1%E8%A7%84%E8%8C%83%E6%8C%87%E5%8D%97/&t=建模规范指南"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li> -->
+
+</ul>
+
+    </div>
+
+  </span>
+
+        
+      </div>
+       
+      <div class="content  hubzy_center">
+        
+          <!-- //body 引入首页和md编译后的页面 -->
+          <!-- md 编译成 html 后的文件模板 -->
+
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="hubzy_center_title">
+    
+    <h1 class="posttitle" itemprop="name headline">
+        建模规范指南
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">hubzy</span>
+      </span>
+      <!-- 文章时间和首页时间 -->
+
+    <div class="postdate">
+      
+        <time datetime="2022-08-11T11:56:47.000Z" itemprop="datePublished">2022-08-11</time>
+        
+        <!-- (Updated: <time datetime="2023-02-06T17:15:33.000Z" itemprop="dateModified">2023-02-07</time>) -->
+        
+      
+    </div>
+
+
+      
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content conterDiy"  id="article" itemprop="articleBody">
+    <h2 id="建模规范指南"><a href="#建模规范指南" class="headerlink" title="建模规范指南"></a>建模规范指南</h2><h3 id="模型大小"><a href="#模型大小" class="headerlink" title="模型大小"></a>模型大小</h3><p>具体对象我们要1:1，实际尺寸建模、不知道尺寸或抽象对象可按比例建模</p>
+<h3 id="环境设置"><a href="#环境设置" class="headerlink" title="环境设置"></a>环境设置</h3><p>单位（厘米）、帧数（30）、背景参考（视图）、建模（捕捉、量化，网格<br>检查）、渲染输出设置（尺寸、帧频范围、输出格式、目录等）</p>
+<h3 id="目录命名"><a href="#目录命名" class="headerlink" title="目录命名"></a>目录命名</h3><p>文件目录：（01_C4D源文件、02_模型Mesh、03_动画脚本、04_渲染效果、05_素材) 文件名称：（01 _某场景 _某对象_日期.文件格式）</p>
+<h3 id="坐标位置"><a href="#坐标位置" class="headerlink" title="坐标位置"></a>坐标位置</h3><p>场景默认摄像机是以世界坐标原点为目标观看；<br>场景模型对象轴心对齐居中到世界坐标原点（0,0,0）；<br>多个模型轴心要对齐居中到组中心；单个模型轴心对齐居中到对象；<br>场景模型、多个或单个对象轴心旋转方向同世界坐标原点一致；<br>检查修正坐标，旋转方向顺序依次是场景模型&gt;组（空组、生成器、克隆等）&gt;父级&gt;子级（修正时，启用轴心，在坐标管理器中修改）</p>
+<h3 id="对象命名规范"><a href="#对象命名规范" class="headerlink" title="对象命名规范"></a>对象命名规范</h3><p>对象命名规范建议使用英文/拼音、数字、下划线组合，便于开发编程与查找<br>控制对象。例如：<br>Mesh对象_部件：duixiang_bujian ( 可用首字母简写 dx_bj)<br>Light类型_描述：pingxingguang_zhuguang ( 可用首字母简写pxg_zg)<br>camera机位_描述：quajing_toushi ( 可用首字母简写 qj_ts)</p>
+<h3 id="图层命名规范"><a href="#图层命名规范" class="headerlink" title="图层命名规范"></a>图层命名规范</h3><p>可同对象命名，也可根据业务需要自定义语义化命名。规则同上</p>
+<h3 id="材质球命名规范"><a href="#材质球命名规范" class="headerlink" title="材质球命名规范"></a>材质球命名规范</h3><p>材质球命名规范建议使用英文/拼音、数字、下划线组合，便于开发编程与查找控制对象。例如：<br>图层管理: 场景_分镜 sence1_split1<br>材质命名: 对象_状态_颜色 light_warning_red<br>贴图命名： 对象_类型_大小 box_AO_2k<br>注意：同材质同业务共用一个材质球，优化掉未使用的材质。</p>
+<h3 id="灯光命名"><a href="#灯光命名" class="headerlink" title="灯光命名"></a>灯光命名</h3><p>灯光命名规范建议使用英文/拼音、数字、下划线组合，便于开发编程与查找<br>控制对象。例如：<br>图层命名: 主光_对象 MainLight_object1<br>注：灯光对象为灯光目标对象</p>
+<h3 id="摄像机命名"><a href="#摄像机命名" class="headerlink" title="摄像机命名"></a>摄像机命名</h3><p>摄像机命名规范建议使用英文/拼音、数字、下划线组合，便于开发编程与查找控制对象。例如：<br>图层命名: 场景_镜头_对象 Scene_shot1_object1<br>注：摄像机对象为摄像机目标对象</p>
+<h3 id="输出规范"><a href="#输出规范" class="headerlink" title="输出规范"></a>输出规范</h3><p>保存C4D源文件：要选择保存工程（包含资源）注意命名时的版本与日期；<br>导出开发文件前检查<br>图层：命名规范（场景、组、对象）、结构规范（父子关系、动画、材质）；<br>对象：转Mesh（统一法线，删除重合或无用的点线面或其他无用对象）；<br>坐标：场景坐标（同世界坐标系原点）、对象坐标（相对位置）；<br>材质：命名规范（默认，状态）、参数设置（合适即可、避免过载）；<br>灯光：命名规范（类别，主次）、参数设置（合适即可、避免过载）；<br>相机：命名规范（场景，镜头）、参数设置（合适即可、动画流畅）；<br>设置：导出设置（场景对象、材质、动画、相机、灯光等）；<br>验证：检查外观（破面、单面、材质、动画、相机、灯光）；</p>
+<h2 id="模型材质规范"><a href="#模型材质规范" class="headerlink" title="模型材质规范"></a>模型材质规范</h2><h3 id="1-颜色定义"><a href="#1-颜色定义" class="headerlink" title="1. 颜色定义"></a>1. 颜色定义</h3><p>1.1. 基本色调（主色调）</p>
+<p>​    模型材质色调主要引用玲珑色系。在单物体模型时可使用玲珑蓝色材质作为主色调，搭配合视觉界面进行调整。<br>​    涉及到透明机身展示部分，可在基础材质球上添加透明属性，透明属性中<code>折射率预设选用‘塑料（PET）’</code>即可。    </p>
+<p>1.2. 特殊部分色调（核心部件色调）<br>​    特殊部件材质针对需要监测的部件使用，具体使用的颜色可根据实际效果进行替换。<br>​    次要部件可使用灰色材质，根据不同层级灰度选择不同的灰色材质。</p>
+<p><img src="/blog/C4D/%E5%BB%BA%E6%A8%A1%E8%A7%84%E8%8C%83%E6%8C%87%E5%8D%97/image-20230207010308080.jpg" alt="image-20230207010308080"></p>
+<p><img src="/blog/C4D/%E5%BB%BA%E6%A8%A1%E8%A7%84%E8%8C%83%E6%8C%87%E5%8D%97/image-20230207010319693.png" alt="image-20230207010319693"></p>
+<h3 id="2-状态定义"><a href="#2-状态定义" class="headerlink" title="2. 状态定义"></a>2. 状态定义</h3><p>2.1. hover描边效果<br>2.2. 当鼠标hover到某个部件时，此部件显示描边效果<br>2.3. active-同上保持描边<br>2.4. 错误类型状态（材质球）<br>2.5. 警告类型状态（材质球）<br>2.6. 成功类型状态（材质球）</p>
+<p><img src="/blog/C4D/%E5%BB%BA%E6%A8%A1%E8%A7%84%E8%8C%83%E6%8C%87%E5%8D%97/image-20230207010359133.png" alt="image-20230207010359133"></p>
+<h3 id="3-交互方式定义"><a href="#3-交互方式定义" class="headerlink" title="3. 交互方式定义"></a>3. 交互方式定义</h3><p>3.1. 默认模型动画定义<br>3.2. 主动介入交互方式<br>3.3. 模型加载提示<br>3.4. 错误提示<br>3.5. 模型基本操作</p>
+
+  </div>
+</article>
+
+
+
+
+          
+          <!-- //actions_mobile 移动端导航栏 -->
+            <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" class="Popup" style="display: none">
+      <ul>
+         
+          <li><a href="/blog/">首页</a></li>
+         
+          <li><a href="/blog/categories/%E9%A1%B9%E7%9B%AE/">项目</a></li>
+         
+          <li><a href="/blog/archives/">归档</a></li>
+         
+          <li><a href="/blog/about/">关于</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer"  class="Popup" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BB%BA%E6%A8%A1%E8%A7%84%E8%8C%83%E6%8C%87%E5%8D%97"><span class="toc-number">1.</span> <span class="toc-text">建模规范指南</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A8%A1%E5%9E%8B%E5%A4%A7%E5%B0%8F"><span class="toc-number">1.1.</span> <span class="toc-text">模型大小</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83%E8%AE%BE%E7%BD%AE"><span class="toc-number">1.2.</span> <span class="toc-text">环境设置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%AE%E5%BD%95%E5%91%BD%E5%90%8D"><span class="toc-number">1.3.</span> <span class="toc-text">目录命名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9D%90%E6%A0%87%E4%BD%8D%E7%BD%AE"><span class="toc-number">1.4.</span> <span class="toc-text">坐标位置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9%E8%B1%A1%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83"><span class="toc-number">1.5.</span> <span class="toc-text">对象命名规范</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BE%E5%B1%82%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83"><span class="toc-number">1.6.</span> <span class="toc-text">图层命名规范</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9D%90%E8%B4%A8%E7%90%83%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83"><span class="toc-number">1.7.</span> <span class="toc-text">材质球命名规范</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%81%AF%E5%85%89%E5%91%BD%E5%90%8D"><span class="toc-number">1.8.</span> <span class="toc-text">灯光命名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%91%84%E5%83%8F%E6%9C%BA%E5%91%BD%E5%90%8D"><span class="toc-number">1.9.</span> <span class="toc-text">摄像机命名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%E8%A7%84%E8%8C%83"><span class="toc-number">1.10.</span> <span class="toc-text">输出规范</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A8%A1%E5%9E%8B%E6%9D%90%E8%B4%A8%E8%A7%84%E8%8C%83"><span class="toc-number">2.</span> <span class="toc-text">模型材质规范</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E9%A2%9C%E8%89%B2%E5%AE%9A%E4%B9%89"><span class="toc-number">2.1.</span> <span class="toc-text">1. 颜色定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E7%8A%B6%E6%80%81%E5%AE%9A%E4%B9%89"><span class="toc-number">2.2.</span> <span class="toc-text">2. 状态定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E4%BA%A4%E4%BA%92%E6%96%B9%E5%BC%8F%E5%AE%9A%E4%B9%89"><span class="toc-number">2.3.</span> <span class="toc-text">3. 交互方式定义</span></a></li></ol></li></ol>
+    </div>
+
+    <div id="share-footer"  class="Popup" style="display: none">
+      <ul>
+  <li> 开发中. </li>
+  <!-- <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://hubzyy.gitee.io/C4D/%E5%BB%BA%E6%A8%A1%E8%A7%84%E8%8C%83%E6%8C%87%E5%8D%97/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://hubzyy.gitee.io/C4D/%E5%BB%BA%E6%A8%A1%E8%A7%84%E8%8C%83%E6%8C%87%E5%8D%97/&text=建模规范指南"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://hubzyy.gitee.io/C4D/%E5%BB%BA%E6%A8%A1%E8%A7%84%E8%8C%83%E6%8C%87%E5%8D%97/&title=建模规范指南"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://hubzyy.gitee.io/C4D/%E5%BB%BA%E6%A8%A1%E8%A7%84%E8%8C%83%E6%8C%87%E5%8D%97/&is_video=false&description=建模规范指南"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=建模规范指南&body=Check out this article: https://hubzyy.gitee.io/C4D/%E5%BB%BA%E6%A8%A1%E8%A7%84%E8%8C%83%E6%8C%87%E5%8D%97/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://hubzyy.gitee.io/C4D/%E5%BB%BA%E6%A8%A1%E8%A7%84%E8%8C%83%E6%8C%87%E5%8D%97/&title=建模规范指南"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://hubzyy.gitee.io/C4D/%E5%BB%BA%E6%A8%A1%E8%A7%84%E8%8C%83%E6%8C%87%E5%8D%97/&title=建模规范指南"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://hubzyy.gitee.io/C4D/%E5%BB%BA%E6%A8%A1%E8%A7%84%E8%8C%83%E6%8C%87%E5%8D%97/&title=建模规范指南"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://hubzyy.gitee.io/C4D/%E5%BB%BA%E6%A8%A1%E8%A7%84%E8%8C%83%E6%8C%87%E5%8D%97/&title=建模规范指南"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://hubzyy.gitee.io/C4D/%E5%BB%BA%E6%A8%A1%E8%A7%84%E8%8C%83%E6%8C%87%E5%8D%97/&name=建模规范指南&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://hubzyy.gitee.io/C4D/%E5%BB%BA%E6%A8%A1%E8%A7%84%E8%8C%83%E6%8C%87%E5%8D%97/&t=建模规范指南"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li> -->
+
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <span id="menu" Popup="#nav-footer" class="icon"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> 菜单</span>
+        <span id="toc" Popup="#toc-footer" class="icon"><i class="fas fa-list fa-lg" aria-hidden="true"></i> 目录</span>
+        <span id="share" Popup="#share-footer" class="icon"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> 分享</span>
+        <span id="top" Popup="" style="display:none" class="icon" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</span>
+    </div>
+
+  </div>
+</div>
+
+            <!-- 图片弹窗 -->
+            <div class="img-pup" style="display: none;">
+              <img>
+            </div>
+          
+
+          <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2020-2023
+    hubzy
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/blog/">首页</a></li>
+         
+          <li><a href="/blog/categories/%E9%A1%B9%E7%9B%AE/">项目</a></li>
+         
+          <li><a href="/blog/archives/">归档</a></li>
+         
+          <li><a href="/blog/about/">关于</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+          <!-- jquery -->
+ 
+  
+<script src="/blog/lib/jquery/jquery.min.js"></script>
+
+
+
+<script src="/blog/lib/jquery/jquery.pjax.js"></script>
+
+
+
+<!-- clipboard -->
+
+   
+    
+<script src="/blog/lib/clipboard/clipboard.min.js"></script>
+
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"复制到粘贴板!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "复制成功!");
+      e.clearSelection();
+      setTimeout(()=>{
+        e.trigger.setAttribute('aria-label', "复制到粘贴板!");
+      },1500)
+    })
+  })
+  </script>
+
+
+<script src="/blog/js/main.js"></script>
+
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Umami Analytics -->
+
+<!-- Disqus Comments -->
+
+     
+      </div>   
+    </div>
+      
+
+    </body>
+    </html>

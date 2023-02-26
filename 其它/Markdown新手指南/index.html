@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang=zh-CN>
+  <head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="标题这是最为常用的格式，在平时常用的的文本编辑器中大多是这样实现的：输入文本、选中文本、设置标题格式。 而在 Markdown 中，你只需要在文本前面加上 # 即可，同理、你还可以增加二级标题、三级标题、四级标题、五级标题和六级标题，总共六级，只需要增加 # 即可，标题字号相应降低。例如： 123456# 一级标题## 二级标题### 三级标题#### 四级标题##### 五级标题#####">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Markdown新手指南">
+<meta property="og:url" content="https://hubzyy.gitee.io/%E5%85%B6%E5%AE%83/Markdown%E6%96%B0%E6%89%8B%E6%8C%87%E5%8D%97/index.html">
+<meta property="og:site_name" content="Hubzy">
+<meta property="og:description" content="标题这是最为常用的格式，在平时常用的的文本编辑器中大多是这样实现的：输入文本、选中文本、设置标题格式。 而在 Markdown 中，你只需要在文本前面加上 # 即可，同理、你还可以增加二级标题、三级标题、四级标题、五级标题和六级标题，总共六级，只需要增加 # 即可，标题字号相应降低。例如： 123456# 一级标题## 二级标题### 三级标题#### 四级标题##### 五级标题#####">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/259-0ad0d0bfc1c608b6.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://unsplash.it/1600/900?random">
+<meta property="article:published_time" content="2021-05-08T10:00:00.000Z">
+<meta property="article:modified_time" content="2022-05-06T13:37:31.000Z">
+<meta property="article:author" content="hubzy">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/259-0ad0d0bfc1c608b6.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/blog/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/blog/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    
+      <title>Hubzy·Markdown新手指南</title>
+    
+    
+    <!-- styles -->
+
+    <!-- 默认CSS引入方法 -->
+    
+<link rel="stylesheet" href="/blog/css/layout.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+
+
+  
+  <!-- L2Dwidget -->
+  
+<script src="/blog/lib/live2d/L2Dwidget.min.js"></script>
+
+
+  <script>
+  // 猫
+  L2Dwidget.init({
+    model: {
+      jsonPath: "/blog/lib/live2d/tororo/assets/tororo.model.json",
+    },
+    display: {
+      superSample: 2,
+      width: 60,
+      height: 80,
+      position: 'right',
+      hOffset: 0,
+      vOffset: 20,
+    },
+    mobile: {
+      show: true,
+      scale: 1,
+      motion: true,
+    },
+    react: {
+      opacityDefault: 1,
+      opacityOnHover: 1,
+    }
+  })
+  //百度搜索爬虫
+
+
+
+var _hmt = _hmt || [];
+(function () {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7e9a19e5e700f1a2607b47c7bd6b35e8";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+
+  </script>
+  <meta name="baidu-site-verification" content="code-dIan6MAmy5" />
+  
+
+  <!-- styles -->
+
+
+ 
+  <link
+    rel="preload"
+    href="/blog/lib/font-awesome/css/all.min.css"
+    as="style"
+    onload="this.onload=null;this.rel='stylesheet'"
+  />
+  <noscript
+    ><link
+      rel="stylesheet"
+      href="/blog/lib/font-awesome/css/all.min.css"
+  /></noscript>
+
+
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+    <body class="max-width mx-auto">
+     <div class="home">
+        <!-- //actions_desktop 右上角导航栏 -->
+      <aside id="#aside" class="hubzy_left">
+        
+          <div class="hubzy_logo">
+	<a href="/blog/">
+		
+		  
+					<div id="logo" style="background-image: url(/blog/images/logo.png);"></div>
+					
+					  
+	  </a>
+	  <div id="title">
+		<a href="/blog/">
+		  <h1>
+			Hubzy
+		  </h1>
+		</a>
+	  </div>
+</div>
+<!-- 搜索栏 -->
+<div id="search">
+	<input class="search-input" type="text" placeholder="search">
+	<span id="search-icon" class="fa fa-bars" title="展开目录"></span>
+</div>
+
+<!-- 侧边目录栏 -->
+<div id="tree">
+	
+
+	
+					<ul>
+						<li class="directory">
+							<a href="#" class="directory">
+								<i class="fa fa-folder"></i>
+								AE
+							</a>
+							
+					<ul>
+						<li class="file">
+							<a href="/blog/AE/AE勾画效果/">
+								<i class="fa fa-file"></i>
+								AE勾画效果
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/AE/AE语言切换/">
+								<i class="fa fa-file"></i>
+								AE语言切换
+							</a>
+						</li>
+					</ul>
+	
+						</li>
+						
+					</ul>
+	
+					<ul>
+						<li class="directory">
+							<a href="#" class="directory">
+								<i class="fa fa-folder"></i>
+								C4D
+							</a>
+							
+					<ul>
+						<li class="file">
+							<a href="/blog/C4D/Blender批量转换格式脚本/">
+								<i class="fa fa-file"></i>
+								Blender批量转换格式脚本
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/C4D/C4D全息科技线条效果/">
+								<i class="fa fa-file"></i>
+								C4D全息科技线条效果
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/C4D/QuadRemesher/">
+								<i class="fa fa-file"></i>
+								QuadRemesher
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/C4D/建模规范指南/">
+								<i class="fa fa-file"></i>
+								建模规范指南
+							</a>
+						</li>
+					</ul>
+	
+						</li>
+						
+					</ul>
+	
+					<ul>
+						<li class="directory">
+							<a href="#" class="directory">
+								<i class="fa fa-folder"></i>
+								UE
+							</a>
+							
+					<ul>
+						<li class="file">
+							<a href="/blog/UE/UE5基本操作笔记/">
+								<i class="fa fa-file"></i>
+								UE5基本操作笔记
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/UE/UE5工业场景项目打包/">
+								<i class="fa fa-file"></i>
+								UE5工业场景项目打包
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/UE/Ue5/">
+								<i class="fa fa-file"></i>
+								Ue5
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/UE/工业场景数据可视化UE5/">
+								<i class="fa fa-file"></i>
+								工业场景数据可视化UE5
+							</a>
+						</li>
+					</ul>
+	
+						</li>
+						
+					</ul>
+	
+					<ul>
+						<li class="directory">
+							<a href="#" class="directory">
+								<i class="fa fa-folder"></i>
+								其它
+							</a>
+							
+					<ul>
+						<li class="file">
+							<a href="/blog/其它/Hexo使用说明/">
+								<i class="fa fa-file"></i>
+								Hexo使用说明
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file active">
+							<a href="/blog/其它/Markdown新手指南/">
+								<i class="fa fa-file"></i>
+								Markdown新手指南
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/其它/git配置/">
+								<i class="fa fa-file"></i>
+								git配置
+							</a>
+						</li>
+					</ul>
+	
+						</li>
+						
+					</ul>
+	
+					<ul>
+						<li class="directory">
+							<a href="#" class="directory">
+								<i class="fa fa-folder"></i>
+								学习
+							</a>
+							
+					<ul>
+						<li class="file">
+							<a href="/blog/学习/Lottie笔记/">
+								<i class="fa fa-file"></i>
+								Lottie笔记
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/学习/QGIS/">
+								<i class="fa fa-file"></i>
+								QGIS
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/学习/三维可视化基础/">
+								<i class="fa fa-file"></i>
+								三维可视化基础
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/学习/模型生产规范/">
+								<i class="fa fa-file"></i>
+								模型生产规范
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/学习/电影-风平浪静/">
+								<i class="fa fa-file"></i>
+								电影-风平浪静
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="directory">
+							<a href="#" class="directory">
+								<i class="fa fa-folder"></i>
+								看完的书籍
+							</a>
+							
+					<ul>
+						<li class="file">
+							<a href="/blog/学习/看完的书籍/写给大家看的设计书/">
+								<i class="fa fa-file"></i>
+								写给大家看的设计书
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/学习/看完的书籍/破茧成蝶/">
+								<i class="fa fa-file"></i>
+								破茧成蝶
+							</a>
+						</li>
+					</ul>
+	
+						</li>
+						
+					</ul>
+	
+						</li>
+						
+					</ul>
+	
+					<ul>
+						<li class="directory">
+							<a href="#" class="directory">
+								<i class="fa fa-folder"></i>
+								文章
+							</a>
+							
+					<ul>
+						<li class="file">
+							<a href="/blog/文章/Lotte动画/">
+								<i class="fa fa-file"></i>
+								Lotte动画
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/文章/PC端设计稿适配问题/">
+								<i class="fa fa-file"></i>
+								PC端设计稿适配问题
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/文章/SketchMeaXure/">
+								<i class="fa fa-file"></i>
+								SketchMeaXure
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/文章/sketch在标签页打开文件默认合并窗口/">
+								<i class="fa fa-file"></i>
+								sketch在标签页打开文件默认合并窗口
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/文章/sketch插件制作/">
+								<i class="fa fa-file"></i>
+								sketch插件制作
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/文章/sketch预览显示连接错误解决方案/">
+								<i class="fa fa-file"></i>
+								sketch预览显示连接错误解决方案
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/文章/切图协作方式/">
+								<i class="fa fa-file"></i>
+								切图协作方式
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/文章/序列帧动画踩坑落地/">
+								<i class="fa fa-file"></i>
+								序列帧动画踩坑落地
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/文章/数据可视化之图表选择/">
+								<i class="fa fa-file"></i>
+								数据可视化之图表选择
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/文章/杭州数据可视化大屏设计/">
+								<i class="fa fa-file"></i>
+								杭州数据可视化大屏设计
+							</a>
+						</li>
+					</ul>
+	
+						</li>
+						
+					</ul>
+	
+					<ul>
+						<li class="directory">
+							<a href="#" class="directory">
+								<i class="fa fa-folder"></i>
+								脚本
+							</a>
+							
+					<ul>
+						<li class="file">
+							<a href="/blog/脚本/Mac移动硬盘/">
+								<i class="fa fa-file"></i>
+								Mac移动硬盘
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/脚本/gitPage更新脚本/">
+								<i class="fa fa-file"></i>
+								gitPage更新脚本
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/脚本/notion汉化脚本/">
+								<i class="fa fa-file"></i>
+								notion汉化脚本
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/脚本/书签脚本/">
+								<i class="fa fa-file"></i>
+								书签脚本
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/脚本/常用终端命令/">
+								<i class="fa fa-file"></i>
+								常用终端命令
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/脚本/微信阅读自动滚动、沉浸式阅读/">
+								<i class="fa fa-file"></i>
+								微信阅读自动滚动、沉浸式阅读
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/脚本/搞定设计、创客贴 油猴插件/">
+								<i class="fa fa-file"></i>
+								搞定设计、创客贴 油猴插件
+							</a>
+						</li>
+					</ul>
+	
+						</li>
+						
+					</ul>
+	
+</div>
+
+        
+      </aside>
+      <div id="header-post" class="hubzy_right">
+        
+          
+  <!-- <a id="menu-icon" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a> -->
+  <!-- <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a> -->
+  <a id="top-icon-tablet" href="#" "Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"
+    style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        
+          <li><a href="/blog/">
+              首页
+            </a></li>
+          
+          <li><a href="/blog/categories/%E9%A1%B9%E7%9B%AE/">
+              项目
+            </a></li>
+          
+          <li><a href="/blog/archives/">
+              归档
+            </a></li>
+          
+          <li><a href="/blog/about/">
+              关于
+            </a></li>
+          
+      </ul>
+    </span>
+    <br />
+    <div id="toc">
+      
+    </div>
+    <br />
+    <span id="actions">
+      <ul>
+        
+          <li><a class="icon" aria-label="上一篇 " href="/blog/%E8%84%9A%E6%9C%AC/%E6%90%9E%E5%AE%9A%E8%AE%BE%E8%AE%A1%E3%80%81%E5%88%9B%E5%AE%A2%E8%B4%B4%20%E6%B2%B9%E7%8C%B4%E6%8F%92%E4%BB%B6/"><i
+                class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();"
+                onmouseout="$('#i-prev').toggle();"></i></a></li>
+          
+            
+              <li><a class="icon" aria-label="下一篇 " href="/blog/%E5%85%B6%E5%AE%83/git%E9%85%8D%E7%BD%AE/"><i
+                    class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();"
+                    onmouseout="$('#i-next').toggle();"></i></a></li>
+              
+                <li><a class="icon" aria-label="返回顶部 " href="#"
+                    onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up"
+                      aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a>
+                </li>
+                <li><a class="icon" aria-label="分享文章 " href="#"><i class="fas fa-share-alt"
+                      aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();"
+                      onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">
+        上一篇
+      </span>
+      <span id="i-next" class="info" style="display:none;">
+        下一篇
+      </span>
+      <span id="i-top" class="info" style="display:none;">
+        返回顶部
+      </span>
+      <span id="i-share" class="info" style="display:none;">
+        分享文章
+      </span>
+    </span>
+    <br />
+    <div id="share" style="display: none">
+      <ul>
+  <li> 开发中. </li>
+  <!-- <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://hubzyy.gitee.io/%E5%85%B6%E5%AE%83/Markdown%E6%96%B0%E6%89%8B%E6%8C%87%E5%8D%97/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://hubzyy.gitee.io/%E5%85%B6%E5%AE%83/Markdown%E6%96%B0%E6%89%8B%E6%8C%87%E5%8D%97/&text=Markdown新手指南"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://hubzyy.gitee.io/%E5%85%B6%E5%AE%83/Markdown%E6%96%B0%E6%89%8B%E6%8C%87%E5%8D%97/&title=Markdown新手指南"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://hubzyy.gitee.io/%E5%85%B6%E5%AE%83/Markdown%E6%96%B0%E6%89%8B%E6%8C%87%E5%8D%97/&is_video=false&description=Markdown新手指南"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Markdown新手指南&body=Check out this article: https://hubzyy.gitee.io/%E5%85%B6%E5%AE%83/Markdown%E6%96%B0%E6%89%8B%E6%8C%87%E5%8D%97/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://hubzyy.gitee.io/%E5%85%B6%E5%AE%83/Markdown%E6%96%B0%E6%89%8B%E6%8C%87%E5%8D%97/&title=Markdown新手指南"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://hubzyy.gitee.io/%E5%85%B6%E5%AE%83/Markdown%E6%96%B0%E6%89%8B%E6%8C%87%E5%8D%97/&title=Markdown新手指南"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://hubzyy.gitee.io/%E5%85%B6%E5%AE%83/Markdown%E6%96%B0%E6%89%8B%E6%8C%87%E5%8D%97/&title=Markdown新手指南"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://hubzyy.gitee.io/%E5%85%B6%E5%AE%83/Markdown%E6%96%B0%E6%89%8B%E6%8C%87%E5%8D%97/&title=Markdown新手指南"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://hubzyy.gitee.io/%E5%85%B6%E5%AE%83/Markdown%E6%96%B0%E6%89%8B%E6%8C%87%E5%8D%97/&name=Markdown新手指南&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://hubzyy.gitee.io/%E5%85%B6%E5%AE%83/Markdown%E6%96%B0%E6%89%8B%E6%8C%87%E5%8D%97/&t=Markdown新手指南"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li> -->
+
+</ul>
+
+    </div>
+
+  </span>
+
+        
+      </div>
+       
+      <div class="content  hubzy_center">
+        
+          <!-- //body 引入首页和md编译后的页面 -->
+          <!-- md 编译成 html 后的文件模板 -->
+
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="hubzy_center_title">
+    
+    <h1 class="posttitle" itemprop="name headline">
+        Markdown新手指南
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">hubzy</span>
+      </span>
+      <!-- 文章时间和首页时间 -->
+
+    <div class="postdate">
+      
+        <time datetime="2021-05-08T10:00:00.000Z" itemprop="datePublished">2021-05-08</time>
+        
+        <!-- (Updated: <time datetime="2022-05-06T13:37:31.000Z" itemprop="dateModified">2022-05-06</time>) -->
+        
+      
+    </div>
+
+
+      
+    <div class="article-category">
+        <i class="fas fa-archive"></i>
+        <a class="category-link" href="/blog/categories/%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/">经验分享</a>
+    </div>
+
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content conterDiy"  id="article" itemprop="articleBody">
+    <span id="more"></span> 
+
+<h2 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h2><p>这是最为常用的格式，在平时常用的的文本编辑器中大多是这样实现的：输入文本、选中文本、设置标题格式。</p>
+<p>而在 Markdown 中，你只需要在文本前面加上 <code>#</code> 即可，同理、你还可以增加二级标题、三级标题、四级标题、五级标题和六级标题，总共六级，只需要增加 <code>#</code> 即可，标题字号相应降低。例如：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 一级标题</span></span><br><span class="line"><span class="comment">## 二级标题</span></span><br><span class="line"><span class="comment">### 三级标题</span></span><br><span class="line"><span class="comment">#### 四级标题</span></span><br><span class="line"><span class="comment">##### 五级标题</span></span><br><span class="line"><span class="comment">###### 六级标题 </span></span><br></pre></td></tr></table></figure>
+
+<p><em>注：<code>#</code> 和「一级标题」之间建议保留一个字符的空格，这是最标准的 Markdown 写法。</em></p>
+<h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><p>列表格式也很常用，在 Markdown 中，你只需要在文字前面加上 <code>-</code> 就可以了，例如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">- 文本1</span><br><span class="line">- 文本2</span><br><span class="line">- 文本3</span><br></pre></td></tr></table></figure>
+
+
+
+<p>如果你希望有序列表，<br> 也可以在文字前面加上 <code>1.</code> <code>2.</code> <code>3.</code> 就可以了，例如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1. 文本1</span><br><span class="line">2. 文本2</span><br><span class="line">3. 文本3</span><br></pre></td></tr></table></figure>
+
+<p><em>注：<code>-</code>、<code>1.</code>和文本之间要保留一个字符的空格。</em></p>
+<h2 id="链接和图片"><a href="#链接和图片" class="headerlink" title="链接和图片"></a>链接和图片</h2><p><a target="_blank" rel="noopener" href="http://www.baidu.com/">跳转链接</a></p>
+<p>在 Markdown 中，插入链接不需要其他按钮，你只需要使用 <code>[显示文本](链接地址)</code> 这样的语法即可，例如：</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="meta">简书</span>](http:<span class="comment">//www.jianshu.com)</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p><img src="http://upload-images.jianshu.io/upload_images/259-0ad0d0bfc1c608b6.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"></p>
+<p>在 Markdown 中，插入图片不需要其他按钮，你只需要使用 <code>![](图片链接地址)</code> 这样的语法即可，例如：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![](http:<span class="comment">//upload-images.jianshu.io/upload_images/259-0ad0d0bfc1c608b6.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)</span></span><br></pre></td></tr></table></figure>
+
+<p><em>注：插入图片的语法和链接的语法很像，只是前面多了一个 <code>！</code>。</em></p>
+<h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><blockquote>
+<p>一盏灯， 一片昏黄； 一简书， 一杯淡茶。 守着那一份淡定， 品读属于自己的寂寞。 保持淡定， 才能欣赏到最美丽的风景！ 保持淡定， 人生从此不再寂寞。</p>
+</blockquote>
+<p>在我们写作的时候经常需要引用他人的文字，这个时候引用这个格式就很有必要了，在 Markdown 中，你只需要在你希望引用的文字前面加上 <code>&gt;</code> 就好了，例如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; 一盏灯， 一片昏黄； 一简书， 一杯淡茶。 守着那一份淡定， 品读属于自己的寂寞。 保持淡定， 才能欣赏到最美丽的风景！ 保持淡定， 人生从此不再寂寞。</span><br></pre></td></tr></table></figure>
+
+<p><em>注：<code>&gt;</code> 和文本之间要保留一个字符的空格。</em></p>
+<h2 id="粗体和斜体"><a href="#粗体和斜体" class="headerlink" title="粗体和斜体"></a>粗体和斜体</h2><p><em>一盏灯</em>， 一片昏黄；<strong>一简书</strong>， 一杯淡茶。 守着那一份淡定， 品读属于自己的寂寞。 保持淡定， 才能欣赏到最美丽的风景！ 保持淡定， 人生从此不再寂寞。</p>
+<p>Markdown 的粗体和斜体也非常简单，用两个 <code>*</code> 包含一段文本就是粗体的语法，用一个 <code>*</code> 包含一段文本就是斜体的语法。例如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">*一盏灯*， 一片昏黄；**一简书**， 一杯淡茶。 守着那一份淡定， 品读属于自己的寂寞。 保持淡定， 才能欣赏到最美丽的风景！ 保持淡定， 人生从此不再寂寞。</span><br></pre></td></tr></table></figure>
+
+<p>最终显示的就是下文，其中「一盏灯」是斜体，「一简书」是粗体：</p>
+<h2 id="代码引用"><a href="#代码引用" class="headerlink" title="代码引用"></a>代码引用</h2><p><code>hello world</code></p>
+<p>多段代码⬇️</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">第一段代码</span><br><span class="line">第二段代码</span><br><span class="line">第三段代码</span><br></pre></td></tr></table></figure>
+
+<p>需要引用代码时，如果引用的语句只有一段，不分行，可以用 ` 将语句包起来。<br>如果引用的语句为多行，可以将```置于这段代码的首行和末行。<br><em>代码引用的案例截图：</em></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">## 代码引用</span><br><span class="line">`hello world`</span><br><span class="line"></span><br><span class="line">## 多段代码引用</span><br><span class="line">```</span><br><span class="line">第一段代码</span><br><span class="line">第二段代码</span><br><span class="line">第三段代码</span><br><span class="line">```</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h2><table>
+<thead>
+<tr>
+<th>Tables</th>
+<th align="center">Are</th>
+<th align="right">Cool</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>col 3 is</td>
+<td align="center">right-aligned</td>
+<td align="right">$1600</td>
+</tr>
+<tr>
+<td>col 2 is</td>
+<td align="center">centered</td>
+<td align="right">$12</td>
+</tr>
+<tr>
+<td>zebra stripes</td>
+<td align="center">are neat</td>
+<td align="right">$1</td>
+</tr>
+</tbody></table>
+<p>相关代码：</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="params">| Tables        |</span> Are           <span class="params">| Cool  |</span></span><br><span class="line"><span class="params">| ------------- |</span><span class="symbol">:-------------</span><span class="symbol">:|</span> -----<span class="symbol">:|</span></span><br><span class="line"><span class="params">| col 3 is      |</span> right-aligned <span class="params">| $1600 |</span></span><br><span class="line"><span class="params">| col 2 is      |</span> centered      <span class="params">|   $12 |</span></span><br><span class="line"><span class="params">| zebra stripes |</span> are neat      <span class="params">|    $1 |</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>显示效果：</p>
+<table>
+<thead>
+<tr>
+<th>dog</th>
+<th>bird</th>
+<th>cat</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>foo</td>
+<td>foo</td>
+<td>foo</td>
+</tr>
+<tr>
+<td>bar</td>
+<td>bar</td>
+<td>bar</td>
+</tr>
+<tr>
+<td>baz</td>
+<td>baz</td>
+<td>baz</td>
+</tr>
+</tbody></table>
+<p>相关代码：</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">dog <span class="params">| bird |</span> cat</span><br><span class="line">----<span class="params">|------|</span>----</span><br><span class="line">foo <span class="params">| foo  |</span> foo</span><br><span class="line">bar <span class="params">| bar  |</span> bar</span><br><span class="line">baz <span class="params">| baz  |</span> baz</span><br></pre></td></tr></table></figure>
+
+
+
+<p><img src="https://unsplash.it/1600/900?random"></p>
+<p>代码如下:</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">![][<span class="number">1</span>]</span><br><span class="line">[<span class="meta">1</span>]: http:<span class="comment">//upload-images.jianshu.io/upload_images/259-0ad0d0bfc1c608b6.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>以上几种格式是比较常用的格式，所以我们针对这些语法做了比较详细的说明。除这些之外，Markdown 还有其他语法，如想了解和学习更多，可以参考这篇<a target="_blank" rel="noopener" href="http://wowubuntu.com/markdown/">『Markdown 语法说明』</a>。</p>
+
+  </div>
+</article>
+
+
+
+
+          
+          <!-- //actions_mobile 移动端导航栏 -->
+            <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" class="Popup" style="display: none">
+      <ul>
+         
+          <li><a href="/blog/">首页</a></li>
+         
+          <li><a href="/blog/categories/%E9%A1%B9%E7%9B%AE/">项目</a></li>
+         
+          <li><a href="/blog/archives/">归档</a></li>
+         
+          <li><a href="/blog/about/">关于</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer"  class="Popup" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%87%E9%A2%98"><span class="toc-number">1.</span> <span class="toc-text">标题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%97%E8%A1%A8"><span class="toc-number">2.</span> <span class="toc-text">列表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%93%BE%E6%8E%A5%E5%92%8C%E5%9B%BE%E7%89%87"><span class="toc-number">3.</span> <span class="toc-text">链接和图片</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%95%E7%94%A8"><span class="toc-number">4.</span> <span class="toc-text">引用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B2%97%E4%BD%93%E5%92%8C%E6%96%9C%E4%BD%93"><span class="toc-number">5.</span> <span class="toc-text">粗体和斜体</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E5%BC%95%E7%94%A8"><span class="toc-number">6.</span> <span class="toc-text">代码引用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A1%A8%E6%A0%BC"><span class="toc-number">7.</span> <span class="toc-text">表格</span></a></li></ol>
+    </div>
+
+    <div id="share-footer"  class="Popup" style="display: none">
+      <ul>
+  <li> 开发中. </li>
+  <!-- <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://hubzyy.gitee.io/%E5%85%B6%E5%AE%83/Markdown%E6%96%B0%E6%89%8B%E6%8C%87%E5%8D%97/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://hubzyy.gitee.io/%E5%85%B6%E5%AE%83/Markdown%E6%96%B0%E6%89%8B%E6%8C%87%E5%8D%97/&text=Markdown新手指南"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://hubzyy.gitee.io/%E5%85%B6%E5%AE%83/Markdown%E6%96%B0%E6%89%8B%E6%8C%87%E5%8D%97/&title=Markdown新手指南"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://hubzyy.gitee.io/%E5%85%B6%E5%AE%83/Markdown%E6%96%B0%E6%89%8B%E6%8C%87%E5%8D%97/&is_video=false&description=Markdown新手指南"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Markdown新手指南&body=Check out this article: https://hubzyy.gitee.io/%E5%85%B6%E5%AE%83/Markdown%E6%96%B0%E6%89%8B%E6%8C%87%E5%8D%97/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://hubzyy.gitee.io/%E5%85%B6%E5%AE%83/Markdown%E6%96%B0%E6%89%8B%E6%8C%87%E5%8D%97/&title=Markdown新手指南"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://hubzyy.gitee.io/%E5%85%B6%E5%AE%83/Markdown%E6%96%B0%E6%89%8B%E6%8C%87%E5%8D%97/&title=Markdown新手指南"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://hubzyy.gitee.io/%E5%85%B6%E5%AE%83/Markdown%E6%96%B0%E6%89%8B%E6%8C%87%E5%8D%97/&title=Markdown新手指南"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://hubzyy.gitee.io/%E5%85%B6%E5%AE%83/Markdown%E6%96%B0%E6%89%8B%E6%8C%87%E5%8D%97/&title=Markdown新手指南"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://hubzyy.gitee.io/%E5%85%B6%E5%AE%83/Markdown%E6%96%B0%E6%89%8B%E6%8C%87%E5%8D%97/&name=Markdown新手指南&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://hubzyy.gitee.io/%E5%85%B6%E5%AE%83/Markdown%E6%96%B0%E6%89%8B%E6%8C%87%E5%8D%97/&t=Markdown新手指南"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li> -->
+
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <span id="menu" Popup="#nav-footer" class="icon"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> 菜单</span>
+        <span id="toc" Popup="#toc-footer" class="icon"><i class="fas fa-list fa-lg" aria-hidden="true"></i> 目录</span>
+        <span id="share" Popup="#share-footer" class="icon"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> 分享</span>
+        <span id="top" Popup="" style="display:none" class="icon" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</span>
+    </div>
+
+  </div>
+</div>
+
+            <!-- 图片弹窗 -->
+            <div class="img-pup" style="display: none;">
+              <img>
+            </div>
+          
+
+          <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2020-2023
+    hubzy
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/blog/">首页</a></li>
+         
+          <li><a href="/blog/categories/%E9%A1%B9%E7%9B%AE/">项目</a></li>
+         
+          <li><a href="/blog/archives/">归档</a></li>
+         
+          <li><a href="/blog/about/">关于</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+          <!-- jquery -->
+ 
+  
+<script src="/blog/lib/jquery/jquery.min.js"></script>
+
+
+
+<script src="/blog/lib/jquery/jquery.pjax.js"></script>
+
+
+
+<!-- clipboard -->
+
+   
+    
+<script src="/blog/lib/clipboard/clipboard.min.js"></script>
+
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"复制到粘贴板!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "复制成功!");
+      e.clearSelection();
+      setTimeout(()=>{
+        e.trigger.setAttribute('aria-label', "复制到粘贴板!");
+      },1500)
+    })
+  })
+  </script>
+
+
+<script src="/blog/js/main.js"></script>
+
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Umami Analytics -->
+
+<!-- Disqus Comments -->
+
+     
+      </div>   
+    </div>
+      
+
+    </body>
+    </html>

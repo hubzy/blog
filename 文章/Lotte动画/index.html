@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang=zh-CN>
+  <head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="Lottie官方文档：https:&#x2F;&#x2F;lottiefiles.com&#x2F;vue-lottie Github地址：https:&#x2F;&#x2F;github.com&#x2F;chenqingspring&#x2F;vue-lottie#licenseLottie介绍：http:&#x2F;&#x2F;test.imweb.io&#x2F;topic&#x2F;5b23a745d4c96b9b1b4c4efcLottie实践：http:&#x2F;&#x2F;test.imweb.io">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Lotte动画使用">
+<meta property="og:url" content="https://hubzyy.gitee.io/%E6%96%87%E7%AB%A0/Lotte%E5%8A%A8%E7%94%BB/index.html">
+<meta property="og:site_name" content="Hubzy">
+<meta property="og:description" content="Lottie官方文档：https:&#x2F;&#x2F;lottiefiles.com&#x2F;vue-lottie Github地址：https:&#x2F;&#x2F;github.com&#x2F;chenqingspring&#x2F;vue-lottie#licenseLottie介绍：http:&#x2F;&#x2F;test.imweb.io&#x2F;topic&#x2F;5b23a745d4c96b9b1b4c4efcLottie实践：http:&#x2F;&#x2F;test.imweb.io">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-12-12T00:35:47.000Z">
+<meta property="article:modified_time" content="2022-05-06T09:05:14.000Z">
+<meta property="article:author" content="hubzy">
+<meta name="twitter:card" content="summary">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/blog/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/blog/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    
+      <title>Hubzy·Lotte动画使用</title>
+    
+    
+    <!-- styles -->
+
+    <!-- 默认CSS引入方法 -->
+    
+<link rel="stylesheet" href="/blog/css/layout.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+
+
+  
+  <!-- L2Dwidget -->
+  
+<script src="/blog/lib/live2d/L2Dwidget.min.js"></script>
+
+
+  <script>
+  // 猫
+  L2Dwidget.init({
+    model: {
+      jsonPath: "/blog/lib/live2d/tororo/assets/tororo.model.json",
+    },
+    display: {
+      superSample: 2,
+      width: 60,
+      height: 80,
+      position: 'right',
+      hOffset: 0,
+      vOffset: 20,
+    },
+    mobile: {
+      show: true,
+      scale: 1,
+      motion: true,
+    },
+    react: {
+      opacityDefault: 1,
+      opacityOnHover: 1,
+    }
+  })
+  //百度搜索爬虫
+
+
+
+var _hmt = _hmt || [];
+(function () {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7e9a19e5e700f1a2607b47c7bd6b35e8";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+
+  </script>
+  <meta name="baidu-site-verification" content="code-dIan6MAmy5" />
+  
+
+  <!-- styles -->
+
+
+ 
+  <link
+    rel="preload"
+    href="/blog/lib/font-awesome/css/all.min.css"
+    as="style"
+    onload="this.onload=null;this.rel='stylesheet'"
+  />
+  <noscript
+    ><link
+      rel="stylesheet"
+      href="/blog/lib/font-awesome/css/all.min.css"
+  /></noscript>
+
+
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+    <body class="max-width mx-auto">
+     <div class="home">
+        <!-- //actions_desktop 右上角导航栏 -->
+      <aside id="#aside" class="hubzy_left">
+        
+          <div class="hubzy_logo">
+	<a href="/blog/">
+		
+		  
+					<div id="logo" style="background-image: url(/blog/images/logo.png);"></div>
+					
+					  
+	  </a>
+	  <div id="title">
+		<a href="/blog/">
+		  <h1>
+			Hubzy
+		  </h1>
+		</a>
+	  </div>
+</div>
+<!-- 搜索栏 -->
+<div id="search">
+	<input class="search-input" type="text" placeholder="search">
+	<span id="search-icon" class="fa fa-bars" title="展开目录"></span>
+</div>
+
+<!-- 侧边目录栏 -->
+<div id="tree">
+	
+
+	
+					<ul>
+						<li class="directory">
+							<a href="#" class="directory">
+								<i class="fa fa-folder"></i>
+								AE
+							</a>
+							
+					<ul>
+						<li class="file">
+							<a href="/blog/AE/AE勾画效果/">
+								<i class="fa fa-file"></i>
+								AE勾画效果
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/AE/AE语言切换/">
+								<i class="fa fa-file"></i>
+								AE语言切换
+							</a>
+						</li>
+					</ul>
+	
+						</li>
+						
+					</ul>
+	
+					<ul>
+						<li class="directory">
+							<a href="#" class="directory">
+								<i class="fa fa-folder"></i>
+								C4D
+							</a>
+							
+					<ul>
+						<li class="file">
+							<a href="/blog/C4D/Blender批量转换格式脚本/">
+								<i class="fa fa-file"></i>
+								Blender批量转换格式脚本
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/C4D/C4D全息科技线条效果/">
+								<i class="fa fa-file"></i>
+								C4D全息科技线条效果
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/C4D/QuadRemesher/">
+								<i class="fa fa-file"></i>
+								QuadRemesher
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/C4D/建模规范指南/">
+								<i class="fa fa-file"></i>
+								建模规范指南
+							</a>
+						</li>
+					</ul>
+	
+						</li>
+						
+					</ul>
+	
+					<ul>
+						<li class="directory">
+							<a href="#" class="directory">
+								<i class="fa fa-folder"></i>
+								UE
+							</a>
+							
+					<ul>
+						<li class="file">
+							<a href="/blog/UE/UE5基本操作笔记/">
+								<i class="fa fa-file"></i>
+								UE5基本操作笔记
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/UE/UE5工业场景项目打包/">
+								<i class="fa fa-file"></i>
+								UE5工业场景项目打包
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/UE/Ue5/">
+								<i class="fa fa-file"></i>
+								Ue5
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/UE/工业场景数据可视化UE5/">
+								<i class="fa fa-file"></i>
+								工业场景数据可视化UE5
+							</a>
+						</li>
+					</ul>
+	
+						</li>
+						
+					</ul>
+	
+					<ul>
+						<li class="directory">
+							<a href="#" class="directory">
+								<i class="fa fa-folder"></i>
+								其它
+							</a>
+							
+					<ul>
+						<li class="file">
+							<a href="/blog/其它/Hexo使用说明/">
+								<i class="fa fa-file"></i>
+								Hexo使用说明
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/其它/Markdown新手指南/">
+								<i class="fa fa-file"></i>
+								Markdown新手指南
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/其它/git配置/">
+								<i class="fa fa-file"></i>
+								git配置
+							</a>
+						</li>
+					</ul>
+	
+						</li>
+						
+					</ul>
+	
+					<ul>
+						<li class="directory">
+							<a href="#" class="directory">
+								<i class="fa fa-folder"></i>
+								学习
+							</a>
+							
+					<ul>
+						<li class="file">
+							<a href="/blog/学习/Lottie笔记/">
+								<i class="fa fa-file"></i>
+								Lottie笔记
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/学习/QGIS/">
+								<i class="fa fa-file"></i>
+								QGIS
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/学习/三维可视化基础/">
+								<i class="fa fa-file"></i>
+								三维可视化基础
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/学习/模型生产规范/">
+								<i class="fa fa-file"></i>
+								模型生产规范
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/学习/电影-风平浪静/">
+								<i class="fa fa-file"></i>
+								电影-风平浪静
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="directory">
+							<a href="#" class="directory">
+								<i class="fa fa-folder"></i>
+								看完的书籍
+							</a>
+							
+					<ul>
+						<li class="file">
+							<a href="/blog/学习/看完的书籍/写给大家看的设计书/">
+								<i class="fa fa-file"></i>
+								写给大家看的设计书
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/学习/看完的书籍/破茧成蝶/">
+								<i class="fa fa-file"></i>
+								破茧成蝶
+							</a>
+						</li>
+					</ul>
+	
+						</li>
+						
+					</ul>
+	
+						</li>
+						
+					</ul>
+	
+					<ul>
+						<li class="directory">
+							<a href="#" class="directory">
+								<i class="fa fa-folder"></i>
+								文章
+							</a>
+							
+					<ul>
+						<li class="file active">
+							<a href="/blog/文章/Lotte动画/">
+								<i class="fa fa-file"></i>
+								Lotte动画
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/文章/PC端设计稿适配问题/">
+								<i class="fa fa-file"></i>
+								PC端设计稿适配问题
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/文章/SketchMeaXure/">
+								<i class="fa fa-file"></i>
+								SketchMeaXure
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/文章/sketch在标签页打开文件默认合并窗口/">
+								<i class="fa fa-file"></i>
+								sketch在标签页打开文件默认合并窗口
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/文章/sketch插件制作/">
+								<i class="fa fa-file"></i>
+								sketch插件制作
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/文章/sketch预览显示连接错误解决方案/">
+								<i class="fa fa-file"></i>
+								sketch预览显示连接错误解决方案
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/文章/切图协作方式/">
+								<i class="fa fa-file"></i>
+								切图协作方式
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/文章/序列帧动画踩坑落地/">
+								<i class="fa fa-file"></i>
+								序列帧动画踩坑落地
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/文章/数据可视化之图表选择/">
+								<i class="fa fa-file"></i>
+								数据可视化之图表选择
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/文章/杭州数据可视化大屏设计/">
+								<i class="fa fa-file"></i>
+								杭州数据可视化大屏设计
+							</a>
+						</li>
+					</ul>
+	
+						</li>
+						
+					</ul>
+	
+					<ul>
+						<li class="directory">
+							<a href="#" class="directory">
+								<i class="fa fa-folder"></i>
+								脚本
+							</a>
+							
+					<ul>
+						<li class="file">
+							<a href="/blog/脚本/Mac移动硬盘/">
+								<i class="fa fa-file"></i>
+								Mac移动硬盘
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/脚本/gitPage更新脚本/">
+								<i class="fa fa-file"></i>
+								gitPage更新脚本
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/脚本/notion汉化脚本/">
+								<i class="fa fa-file"></i>
+								notion汉化脚本
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/脚本/书签脚本/">
+								<i class="fa fa-file"></i>
+								书签脚本
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/脚本/常用终端命令/">
+								<i class="fa fa-file"></i>
+								常用终端命令
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/脚本/微信阅读自动滚动、沉浸式阅读/">
+								<i class="fa fa-file"></i>
+								微信阅读自动滚动、沉浸式阅读
+							</a>
+						</li>
+					</ul>
+	
+					<ul>
+						<li class="file">
+							<a href="/blog/脚本/搞定设计、创客贴 油猴插件/">
+								<i class="fa fa-file"></i>
+								搞定设计、创客贴 油猴插件
+							</a>
+						</li>
+					</ul>
+	
+						</li>
+						
+					</ul>
+	
+</div>
+
+        
+      </aside>
+      <div id="header-post" class="hubzy_right">
+        
+          
+  <!-- <a id="menu-icon" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a> -->
+  <!-- <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a> -->
+  <a id="top-icon-tablet" href="#" "Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"
+    style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        
+          <li><a href="/blog/">
+              首页
+            </a></li>
+          
+          <li><a href="/blog/categories/%E9%A1%B9%E7%9B%AE/">
+              项目
+            </a></li>
+          
+          <li><a href="/blog/archives/">
+              归档
+            </a></li>
+          
+          <li><a href="/blog/about/">
+              关于
+            </a></li>
+          
+      </ul>
+    </span>
+    <br />
+    <div id="toc">
+      
+    </div>
+    <br />
+    <span id="actions">
+      <ul>
+        
+          <li><a class="icon" aria-label="上一篇 " href="/blog/%E5%AD%A6%E4%B9%A0/%E7%94%B5%E5%BD%B1-%E9%A3%8E%E5%B9%B3%E6%B5%AA%E9%9D%99/"><i
+                class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();"
+                onmouseout="$('#i-prev').toggle();"></i></a></li>
+          
+            
+                <li><a class="icon" aria-label="返回顶部 " href="#"
+                    onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up"
+                      aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a>
+                </li>
+                <li><a class="icon" aria-label="分享文章 " href="#"><i class="fas fa-share-alt"
+                      aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();"
+                      onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">
+        上一篇
+      </span>
+      <span id="i-next" class="info" style="display:none;">
+        下一篇
+      </span>
+      <span id="i-top" class="info" style="display:none;">
+        返回顶部
+      </span>
+      <span id="i-share" class="info" style="display:none;">
+        分享文章
+      </span>
+    </span>
+    <br />
+    <div id="share" style="display: none">
+      <ul>
+  <li> 开发中. </li>
+  <!-- <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://hubzyy.gitee.io/%E6%96%87%E7%AB%A0/Lotte%E5%8A%A8%E7%94%BB/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://hubzyy.gitee.io/%E6%96%87%E7%AB%A0/Lotte%E5%8A%A8%E7%94%BB/&text=Lotte动画使用"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://hubzyy.gitee.io/%E6%96%87%E7%AB%A0/Lotte%E5%8A%A8%E7%94%BB/&title=Lotte动画使用"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://hubzyy.gitee.io/%E6%96%87%E7%AB%A0/Lotte%E5%8A%A8%E7%94%BB/&is_video=false&description=Lotte动画使用"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Lotte动画使用&body=Check out this article: https://hubzyy.gitee.io/%E6%96%87%E7%AB%A0/Lotte%E5%8A%A8%E7%94%BB/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://hubzyy.gitee.io/%E6%96%87%E7%AB%A0/Lotte%E5%8A%A8%E7%94%BB/&title=Lotte动画使用"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://hubzyy.gitee.io/%E6%96%87%E7%AB%A0/Lotte%E5%8A%A8%E7%94%BB/&title=Lotte动画使用"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://hubzyy.gitee.io/%E6%96%87%E7%AB%A0/Lotte%E5%8A%A8%E7%94%BB/&title=Lotte动画使用"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://hubzyy.gitee.io/%E6%96%87%E7%AB%A0/Lotte%E5%8A%A8%E7%94%BB/&title=Lotte动画使用"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://hubzyy.gitee.io/%E6%96%87%E7%AB%A0/Lotte%E5%8A%A8%E7%94%BB/&name=Lotte动画使用&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://hubzyy.gitee.io/%E6%96%87%E7%AB%A0/Lotte%E5%8A%A8%E7%94%BB/&t=Lotte动画使用"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li> -->
+
+</ul>
+
+    </div>
+
+  </span>
+
+        
+      </div>
+       
+      <div class="content  hubzy_center">
+        
+          <!-- //body 引入首页和md编译后的页面 -->
+          <!-- md 编译成 html 后的文件模板 -->
+
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="hubzy_center_title">
+    
+    <h1 class="posttitle" itemprop="name headline">
+        Lotte动画使用
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">hubzy</span>
+      </span>
+      <!-- 文章时间和首页时间 -->
+
+    <div class="postdate">
+      
+        <time datetime="2020-12-12T00:35:47.000Z" itemprop="datePublished">2020-12-12</time>
+        
+        <!-- (Updated: <time datetime="2022-05-06T09:05:14.000Z" itemprop="dateModified">2022-05-06</time>) -->
+        
+      
+    </div>
+
+
+      
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content conterDiy"  id="article" itemprop="articleBody">
+    <span id="more"></span> 
+
+<blockquote>
+<p>Lottie官方文档：<a target="_blank" rel="noopener" href="https://lottiefiles.com/">https://lottiefiles.com/</a><br>vue-lottie Github地址：<a target="_blank" rel="noopener" href="https://github.com/chenqingspring/vue-lottie#license">https://github.com/chenqingspring/vue-lottie#license</a><br>Lottie介绍：<a target="_blank" rel="noopener" href="http://test.imweb.io/topic/5b23a745d4c96b9b1b4c4efc">http://test.imweb.io/topic/5b23a745d4c96b9b1b4c4efc</a><br>Lottie实践：<a target="_blank" rel="noopener" href="http://test.imweb.io/topic/5b23a850d4c96b9b1b4c4efe">http://test.imweb.io/topic/5b23a850d4c96b9b1b4c4efe</a><br>Lottie源码分析：<a target="_blank" rel="noopener" href="http://test.imweb.io/topic/5b2b129e61340cbe5576ca44">http://test.imweb.io/topic/5b2b129e61340cbe5576ca44</a></p>
+</blockquote>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//第一种：全局引入,在main.js中加入如下代码</span></span><br><span class="line"><span class="keyword">import</span> lottie <span class="keyword">from</span> <span class="string">&#x27;vue-lottie&#x27;</span>Vue.component(<span class="string">&#x27;lottie&#x27;</span>,lottie)</span><br><span class="line"></span><br><span class="line"><span class="comment">//第二种：局部引入 </span></span><br><span class="line"><span class="comment">//在vue文件中引用vue-lottie,然后在组件中进行注册</span></span><br><span class="line"><span class="keyword">import</span> lottie <span class="keyword">from</span> <span class="string">&#x27;vue-lottie&#x27;</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span>&#123;...components:&#123; <span class="string">&#x27;lottie&#x27;</span>:lottie&#125;...&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//第3步：在使用到的Vue文件中引入lottie json文件</span></span><br><span class="line">  <span class="keyword">import</span> Anim <span class="keyword">from</span> <span class="string">&quot;../assets/anim.json&quot;</span></span><br><span class="line"><span class="comment">//第4步：在我们需要使用到的菜单位置使用lottie</span></span><br><span class="line"> &lt;lottie :options=<span class="string">&quot;defaultOptions&quot;</span>  :width=<span class="string">&quot;24&quot;</span> :height=<span class="string">&quot;24&quot;</span> v-on:animCreated=<span class="string">&quot;handleAnimation&quot;</span> /&gt;</span><br><span class="line">data:&#123;  </span><br><span class="line">  <span class="keyword">return</span>&#123; </span><br><span class="line">         <span class="attr">defaultOptions</span>:&#123;</span><br><span class="line">            <span class="attr">animationData</span>:Anim,</span><br><span class="line">            <span class="attr">loop</span>:<span class="literal">false</span>,</span><br><span class="line">            <span class="attr">autoplay</span>:<span class="literal">false</span></span><br><span class="line">          &#125;,        </span><br><span class="line">        <span class="attr">defaultAnim</span>:<span class="string">&#x27;&#x27;</span>   </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line"><span class="attr">methods</span>:&#123;</span><br><span class="line"><span class="function"><span class="title">handleAnimation</span>(<span class="params">anim</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">this</span>.defaultAnim = anim; </span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>说明：lottie初始化时，需要指定一个options配置项，因为lottie是没有宽高的，所以宽高必须设置，animCreated方法用于创建lottie动画，它的方法返回一个anim对象，里面包含这个动画的所有属性。我们可以根据它返回的这个对象，来对lottie动画做一系列的控制。</p>
+<h3 id="lottie的参数options说明："><a href="#lottie的参数options说明：" class="headerlink" title="lottie的参数options说明："></a>lottie的参数options说明：</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">container: element, <span class="comment">//要包含该动画的dom元素</span></span><br><span class="line"><span class="attr">renderer</span>: <span class="string">&#x27;svg&#x27;</span>, <span class="comment">//渲染方式，svg、canvas、html（轻量版仅svg渲染）</span></span><br><span class="line"><span class="attr">loop</span>: **<span class="literal">true</span>**, <span class="comment">//是否循环播放，**true**表示循环，**false**表示不循环</span></span><br><span class="line">autoplay: **<span class="literal">true</span>**, <span class="comment">//是否自动播放，**true**表示自动播放</span></span><br><span class="line">animationData: animationData, <span class="comment">//需要引入的json动画对象</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="可调用方法："><a href="#可调用方法：" class="headerlink" title="可调用方法："></a>可调用方法：</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Anim.play(); <span class="comment">// 播放该动画，从目前停止的帧开始播放</span></span><br><span class="line">Anim.stop(); <span class="comment">// 停止播放该动画，回到第0帧</span></span><br><span class="line">Anim.pause(); <span class="comment">// 暂停该动画，在当前帧停止并保持</span></span><br><span class="line">Anim.goToAndStop(value, isFrame); <span class="comment">// 跳到某个时刻/帧并停止。isFrame(默认false)指示value表示帧还是时间(毫秒)</span></span><br><span class="line">Anim.goToAndPlay(value, isFrame); <span class="comment">// 跳到某个时刻/帧并从该帧往后进行播放</span></span><br><span class="line">Anim.goToAndStop(<span class="number">30</span>, <span class="literal">true</span>); <span class="comment">// 跳转到第30帧并停止</span></span><br><span class="line">Anim.goToAndPlay(<span class="number">300</span>); <span class="comment">// 跳转到第300毫秒并从300毫秒开始向后播放</span></span><br><span class="line">Anim.playSegments(arr, forceFlag); <span class="comment">// 播放片段，arr可以包含两个数字或者两个数字组成的数组，forceFlag表示是否立即强制播放该片段，如果是false则需等前一个动画结束后开始播放，如果是true，则立即开始播放</span></span><br><span class="line">Anim.playSegments([<span class="number">10</span>,<span class="number">20</span>], <span class="literal">false</span>); <span class="comment">// 播放完之前的片段，播放10-20帧</span></span><br><span class="line">Anim.playSegments([[<span class="number">0</span>,<span class="number">5</span>],[<span class="number">10</span>,<span class="number">18</span>]], <span class="literal">true</span>); <span class="comment">// 直接播放0-5帧和10-18帧</span></span><br><span class="line">Anim.setSpeed(speed); <span class="comment">// 设置播放速度，speed为1表示正常速度</span></span><br><span class="line">Anim.setDirection(direction); <span class="comment">// 设置播放方向，1表示正向播放，-1表示反向播放</span></span><br><span class="line">Anim.destroy(); <span class="comment">// 删除该动画，移除相应的元素标签等。在unmount的时候，需要调用该方法</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="其他监听事件："><a href="#其他监听事件：" class="headerlink" title="其他监听事件："></a>其他监听事件：</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">complete: <span class="comment">//播放完成后触发（循环播放下不会触发）</span></span><br><span class="line">loopComplete: <span class="comment">// 当前循环下播放（循环播放/非循环播放）结束时触发</span></span><br><span class="line">enterFrame: <span class="comment">//每进入一帧就会触发，播放时每一帧都会触发一次，stop方法也会触发</span></span><br><span class="line">segmentStart: <span class="comment">//播放指定片段开始时触发，playSegments、resetSegments//等方法刚开始播放指定片段时会发出，如果playSegments播放多个片段，多个片段最开始都会触发。</span></span><br><span class="line">data_ready: <span class="comment">//动画json文件加载完毕触发</span></span><br><span class="line">DOMLoaded: <span class="comment">//动画相关的dom已经被添加到html后触发</span></span><br><span class="line">destroy: <span class="comment">//将在动画删除时触发</span></span><br></pre></td></tr></table></figure>
+  </div>
+</article>
+
+
+
+
+          
+          <!-- //actions_mobile 移动端导航栏 -->
+            <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" class="Popup" style="display: none">
+      <ul>
+         
+          <li><a href="/blog/">首页</a></li>
+         
+          <li><a href="/blog/categories/%E9%A1%B9%E7%9B%AE/">项目</a></li>
+         
+          <li><a href="/blog/archives/">归档</a></li>
+         
+          <li><a href="/blog/about/">关于</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer"  class="Popup" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#lottie%E7%9A%84%E5%8F%82%E6%95%B0options%E8%AF%B4%E6%98%8E%EF%BC%9A"><span class="toc-number">1.</span> <span class="toc-text">lottie的参数options说明：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%AF%E8%B0%83%E7%94%A8%E6%96%B9%E6%B3%95%EF%BC%9A"><span class="toc-number">2.</span> <span class="toc-text">可调用方法：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%E7%9B%91%E5%90%AC%E4%BA%8B%E4%BB%B6%EF%BC%9A"><span class="toc-number">3.</span> <span class="toc-text">其他监听事件：</span></a></li></ol>
+    </div>
+
+    <div id="share-footer"  class="Popup" style="display: none">
+      <ul>
+  <li> 开发中. </li>
+  <!-- <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://hubzyy.gitee.io/%E6%96%87%E7%AB%A0/Lotte%E5%8A%A8%E7%94%BB/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://hubzyy.gitee.io/%E6%96%87%E7%AB%A0/Lotte%E5%8A%A8%E7%94%BB/&text=Lotte动画使用"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://hubzyy.gitee.io/%E6%96%87%E7%AB%A0/Lotte%E5%8A%A8%E7%94%BB/&title=Lotte动画使用"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://hubzyy.gitee.io/%E6%96%87%E7%AB%A0/Lotte%E5%8A%A8%E7%94%BB/&is_video=false&description=Lotte动画使用"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Lotte动画使用&body=Check out this article: https://hubzyy.gitee.io/%E6%96%87%E7%AB%A0/Lotte%E5%8A%A8%E7%94%BB/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://hubzyy.gitee.io/%E6%96%87%E7%AB%A0/Lotte%E5%8A%A8%E7%94%BB/&title=Lotte动画使用"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://hubzyy.gitee.io/%E6%96%87%E7%AB%A0/Lotte%E5%8A%A8%E7%94%BB/&title=Lotte动画使用"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://hubzyy.gitee.io/%E6%96%87%E7%AB%A0/Lotte%E5%8A%A8%E7%94%BB/&title=Lotte动画使用"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://hubzyy.gitee.io/%E6%96%87%E7%AB%A0/Lotte%E5%8A%A8%E7%94%BB/&title=Lotte动画使用"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://hubzyy.gitee.io/%E6%96%87%E7%AB%A0/Lotte%E5%8A%A8%E7%94%BB/&name=Lotte动画使用&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://hubzyy.gitee.io/%E6%96%87%E7%AB%A0/Lotte%E5%8A%A8%E7%94%BB/&t=Lotte动画使用"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li> -->
+
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <span id="menu" Popup="#nav-footer" class="icon"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> 菜单</span>
+        <span id="toc" Popup="#toc-footer" class="icon"><i class="fas fa-list fa-lg" aria-hidden="true"></i> 目录</span>
+        <span id="share" Popup="#share-footer" class="icon"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> 分享</span>
+        <span id="top" Popup="" style="display:none" class="icon" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</span>
+    </div>
+
+  </div>
+</div>
+
+            <!-- 图片弹窗 -->
+            <div class="img-pup" style="display: none;">
+              <img>
+            </div>
+          
+
+          <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2020-2023
+    hubzy
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/blog/">首页</a></li>
+         
+          <li><a href="/blog/categories/%E9%A1%B9%E7%9B%AE/">项目</a></li>
+         
+          <li><a href="/blog/archives/">归档</a></li>
+         
+          <li><a href="/blog/about/">关于</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+          <!-- jquery -->
+ 
+  
+<script src="/blog/lib/jquery/jquery.min.js"></script>
+
+
+
+<script src="/blog/lib/jquery/jquery.pjax.js"></script>
+
+
+
+<!-- clipboard -->
+
+   
+    
+<script src="/blog/lib/clipboard/clipboard.min.js"></script>
+
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"复制到粘贴板!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "复制成功!");
+      e.clearSelection();
+      setTimeout(()=>{
+        e.trigger.setAttribute('aria-label', "复制到粘贴板!");
+      },1500)
+    })
+  })
+  </script>
+
+
+<script src="/blog/js/main.js"></script>
+
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Umami Analytics -->
+
+<!-- Disqus Comments -->
+
+     
+      </div>   
+    </div>
+      
+
+    </body>
+    </html>
