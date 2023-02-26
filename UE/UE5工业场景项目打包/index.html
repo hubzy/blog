@@ -127,7 +127,7 @@ var _hmt = _hmt || [];
 
 
 
-<meta name="generator" content="Hexo 5.4.0"></head>
+<meta name="generator" content="Hexo 6.3.0"></head>
 
 
     <body class="max-width mx-auto">
@@ -766,9 +766,9 @@ var _hmt = _hmt || [];
   <div class="content conterDiy"  id="article" itemprop="articleBody">
     <h3 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h3><p>操作系统：MacOS 12.6<br>处理器：M1pro<br>引擎版本：5.0.3</p>
 <h3 id="一、ERROR-Mac-Unable-to-find-any-Sdks-that-could-be-installed"><a href="#一、ERROR-Mac-Unable-to-find-any-Sdks-that-could-be-installed" class="headerlink" title="一、ERROR: Mac: Unable to find any Sdks that could be installed"></a>一、ERROR: Mac: Unable to find any Sdks that could be installed</h3><p>打包时会提示SDK未正常安装</p>
-<p><img src="/blog/UE/UE5%E5%B7%A5%E4%B8%9A%E5%9C%BA%E6%99%AF%E9%A1%B9%E7%9B%AE%E6%89%93%E5%8C%85/image-20221015021207154.png" alt="image-20221015021207154"></p>
+<p><img src="/blog/UE/UE5工业场景项目打包/image-20221015021207154.png" alt="image-20221015021207154"></p>
 <p>如果继续安装，打包过程中还是会报错。</p>
-<p><img src="/blog/UE/UE5%E5%B7%A5%E4%B8%9A%E5%9C%BA%E6%99%AF%E9%A1%B9%E7%9B%AE%E6%89%93%E5%8C%85/image-20221015020405923.png" alt="image-20221015020405923"></p>
+<p><img src="/blog/UE/UE5工业场景项目打包/image-20221015020405923.png" alt="image-20221015020405923"></p>
 <p>大概意思是Mac的SDK未能正确安装。</p>
 <p>期间试过B站up主翻译YouTube视频国外视频中的方法，对Mac系统并不生效。</p>
 <p>于是通过爬帖子获取到的信息</p>
@@ -785,11 +785,11 @@ var _hmt = _hmt || [];
 <p>经过爬帖子，参考YouTube视频操作</p>
 <p>参考论坛链接<br><a target="_blank" rel="noopener" href="https://forums.unrealengine.com/t/packagingresults-error-missing-precompiled-manifest-for-launch-this-module-was-most-likely-not-flagged-for-being-included-in-a-precompiled-build-set-precompilefortargets-precompiletargetstype-any-in-launch-build-cs-to-override/474087/6">https://forums.unrealengine.com/t/packagingresults-error-missing-precompiled-manifest-for-launch-this-module-was-most-likely-not-flagged-for-being-included-in-a-precompiled-build-set-precompilefortargets-precompiletargetstype-any-in-launch-build-cs-to-override/474087/6</a></p>
 <h4 id="解决方案-1"><a href="#解决方案-1" class="headerlink" title="解决方案"></a>解决方案</h4><p>找到引擎中的<code>Launch</code>文件夹，复制到项目中的文件夹中！即可</p>
-<p><img src="/blog/UE/UE5%E5%B7%A5%E4%B8%9A%E5%9C%BA%E6%99%AF%E9%A1%B9%E7%9B%AE%E6%89%93%E5%8C%85/image-20221015020141219.png" alt="image-20221015020141219"></p>
-<p><img src="/blog/UE/UE5%E5%B7%A5%E4%B8%9A%E5%9C%BA%E6%99%AF%E9%A1%B9%E7%9B%AE%E6%89%93%E5%8C%85/image-20221015020317583.png" alt="image-20221015020317583"></p>
+<p><img src="/blog/UE/UE5工业场景项目打包/image-20221015020141219.png" alt="image-20221015020141219"></p>
+<p><img src="/blog/UE/UE5工业场景项目打包/image-20221015020317583.png" alt="image-20221015020317583"></p>
 <p>第一次打包挺慢的（可能是我没构建光照）半小时左右，第二次之后相对快了很多几分钟。</p>
-<p><img src="/blog/UE/UE5%E5%B7%A5%E4%B8%9A%E5%9C%BA%E6%99%AF%E9%A1%B9%E7%9B%AE%E6%89%93%E5%8C%85/image-20221015213836168.png" alt="image-20221015213836168"></p>
-<p><img src="/blog/UE/UE5%E5%B7%A5%E4%B8%9A%E5%9C%BA%E6%99%AF%E9%A1%B9%E7%9B%AE%E6%89%93%E5%8C%85/image-20221015213805121.png" alt="image-20221015213805121"></p>
+<p><img src="/blog/UE/UE5工业场景项目打包/image-20221015213836168.png" alt="image-20221015213836168"></p>
+<p><img src="/blog/UE/UE5工业场景项目打包/image-20221015213805121.png" alt="image-20221015213805121"></p>
 <p>祝项目打包成功！！！</p>
 
   </div>
@@ -923,8 +923,6 @@ var _hmt = _hmt || [];
   </script>
 
 
-<script src="/blog/js/main.js"></script>
-
 
 <!-- Google Analytics -->
 
@@ -940,6 +938,8 @@ var _hmt = _hmt || [];
       </div>   
     </div>
       
+    
+<script src="/blog/js/main.js"></script>
 
     </body>
     </html>

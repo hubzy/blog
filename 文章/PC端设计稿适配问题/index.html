@@ -128,7 +128,7 @@ var _hmt = _hmt || [];
 
 
 
-<meta name="generator" content="Hexo 5.4.0"></head>
+<meta name="generator" content="Hexo 6.3.0"></head>
 
 
     <body class="max-width mx-auto">
@@ -770,41 +770,41 @@ var _hmt = _hmt || [];
 
 <p>在实际使用场景中，用户的设备不一，分辨率不统一，有些人为修改设备分辨率缩放，有些系统默认修改了分辨率缩放，导致了有些设备正常、有些不正常的情况。</p>
 <p>经过对windows与Mac笔记本的调研，在系统中一般都有如下分辨率（可能调研不全）</p>
-<p><img src="/blog/%E6%96%87%E7%AB%A0/PC%E7%AB%AF%E8%AE%BE%E8%AE%A1%E7%A8%BF%E9%80%82%E9%85%8D%E9%97%AE%E9%A2%98/image-20220211032049226.png" alt="image-20220211032049226"></p>
-<p>Mac笔记本：1024    1280    1440（默认）    1680</p>
-<p><img src="/blog/%E6%96%87%E7%AB%A0/PC%E7%AB%AF%E8%AE%BE%E8%AE%A1%E7%A8%BF%E9%80%82%E9%85%8D%E9%97%AE%E9%A2%98/image-20211229145603178.png" alt="image-20211229145603178"></p>
-<p>Windows笔记本：1280（150%推荐）    1920（100%）等等…</p>
-<p>总结常规会出现的设备分辨率：1024    1280    1440    1680    1920</p>
+<p><img src="/blog/文章/PC端设计稿适配问题/image-20220211032049226.png" alt="image-20220211032049226"></p>
+<p>Mac笔记本：1024	1280	1440（默认）	1680</p>
+<p><img src="/blog/文章/PC端设计稿适配问题/image-20211229145603178.png" alt="image-20211229145603178"></p>
+<p>Windows笔记本：1280（150%推荐）	1920（100%）等等…</p>
+<p>总结常规会出现的设备分辨率：1024	1280	1440	1680	1920</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">屏幕总高度：720</span><br><span class="line">-----</span><br><span class="line">谷歌浏览器</span><br><span class="line">浏览器总高度：690</span><br><span class="line">浏览器标签栏和地址栏：70</span><br><span class="line">浏览器书签栏：32</span><br><span class="line">分割线：1</span><br><span class="line">----</span><br><span class="line">系统dock栏：30</span><br><span class="line">---</span><br><span class="line">最小可视高度：587（浏览器总高度减状态减地址减书签）</span><br><span class="line">最大可视高度：650（屏幕总高度减浏览器标签栏和地址栏）</span><br></pre></td></tr></table></figure>
 
 <h3 id="二、问题还原"><a href="#二、问题还原" class="headerlink" title="二、问题还原"></a>二、问题还原</h3><p>首先<strong>前提：</strong>设计稿<code>1920x1080</code>;<br>设备分辨率：<code>1920</code> <code>1680</code> <code>1440</code>  <code>1280</code> <code>1024</code></p>
 <ol>
 <li>当设备分辨率为<code>1920</code>情况下👇</li>
 </ol>
-<p><img src="/blog/%E6%96%87%E7%AB%A0/PC%E7%AB%AF%E8%AE%BE%E8%AE%A1%E7%A8%BF%E9%80%82%E9%85%8D%E9%97%AE%E9%A2%98/image-20220211010812771.png" alt="image-20220211010812771"><br>设计稿与设备分辨率同为<code>1920</code>的情况下1:1的还原效果；</p>
+<p><img src="/blog/文章/PC端设计稿适配问题/image-20220211010812771.png" alt="image-20220211010812771"><br>设计稿与设备分辨率同为<code>1920</code>的情况下1:1的还原效果；</p>
 <hr>
 <ol start="2">
 <li>当设备分辨率为<code>1680</code>情况下👇 与<code>1920设计稿</code>对比</li>
 </ol>
-<p><img src="/blog/%E6%96%87%E7%AB%A0/PC%E7%AB%AF%E8%AE%BE%E8%AE%A1%E7%A8%BF%E9%80%82%E9%85%8D%E9%97%AE%E9%A2%98/1680.png" alt="image-20220211011121725"></p>
+<p><img src="/blog/文章/PC端设计稿适配问题/1680.png" alt="image-20220211011121725"></p>
 <p>1680与视觉稿差别不是很大；</p>
 <hr>
 <ol start="3">
 <li>当设备分辨率为<code>1440</code>情况下👇 与<code>1920设计稿</code>对比</li>
 </ol>
-<p><img src="/blog/%E6%96%87%E7%AB%A0/PC%E7%AB%AF%E8%AE%BE%E8%AE%A1%E7%A8%BF%E9%80%82%E9%85%8D%E9%97%AE%E9%A2%98/1440.png" alt="image-20220211011205012"></p>
+<p><img src="/blog/文章/PC端设计稿适配问题/1440.png" alt="image-20220211011205012"></p>
 <p>1440与视觉稿的差距也不是很大，还是能接受；1440一般为MacBook的默认分辨率；</p>
 <hr>
 <ol start="4">
 <li>当设备分辨率为<code>1280</code>情况下👇 与<code>1920设计稿</code>对比</li>
 </ol>
-<p><img src="/blog/%E6%96%87%E7%AB%A0/PC%E7%AB%AF%E8%AE%BE%E8%AE%A1%E7%A8%BF%E9%80%82%E9%85%8D%E9%97%AE%E9%A2%98/1280.png" alt="image-20220211011236797"></p>
+<p><img src="/blog/文章/PC端设计稿适配问题/1280.png" alt="image-20220211011236797"></p>
 <p>1280与视觉稿差距就挺大了，光看左右两侧的宽度可能感觉差距不是很大，但是对比中间区域，相差有点大了，其次顶部导航栏的高度差距也挺大，1280同时也是windows默认推荐放大150%的效果；</p>
 <hr>
 <ol start="5">
 <li>当设备分辨率为<code>1024</code>情况下👇 与<code>1920设计稿</code>对比</li>
 </ol>
-<p><img src="/blog/%E6%96%87%E7%AB%A0/PC%E7%AB%AF%E8%AE%BE%E8%AE%A1%E7%A8%BF%E9%80%82%E9%85%8D%E9%97%AE%E9%A2%98/1024.png" alt="image-20220211011405735"></p>
+<p><img src="/blog/文章/PC端设计稿适配问题/1024.png" alt="image-20220211011405735"></p>
 <p>1024与视觉稿的差别就更明显了，简直就左中右三等分了。顶部也出现了大脑门子</p>
 <hr>
 <p>整体看来，分辨率越小，显示的字号就越大，而对于固定宽度或高度的容器布局而言也会相对应的变大，所以就导致了某些模块太大，导航栏字很大的现象.</p>
@@ -846,7 +846,7 @@ var _hmt = _hmt || [];
 <li><p>断点式媒体查询（css3里面的叫法）</p>
 <p>在视觉还原度要求高，且设备分辨率复杂的情况下，需要对不同的设备单独适配了（一般这种情况在车载视觉HMI中会出现比较多）汽车终端的屏幕分辨率相对复杂，且视觉还原也要求比较高。对于不同的分辨率要做出不同的设计稿，前端也需要写多套样式适配。</p>
 <p>常见的PC端适配移动端大多数也是采用断点媒体查询方法</p>
-<p><img src="/blog/%E6%96%87%E7%AB%A0/PC%E7%AB%AF%E8%AE%BE%E8%AE%A1%E7%A8%BF%E9%80%82%E9%85%8D%E9%97%AE%E9%A2%98/70.png" alt="img"></p>
+<p><img src="/blog/文章/PC端设计稿适配问题/70.png" alt="img"></p>
 <p>根据不同的设备分辨率范围，做出适配。</p>
 <p>优点：</p>
 <ul>
@@ -995,8 +995,6 @@ var _hmt = _hmt || [];
   </script>
 
 
-<script src="/blog/js/main.js"></script>
-
 
 <!-- Google Analytics -->
 
@@ -1012,6 +1010,8 @@ var _hmt = _hmt || [];
       </div>   
     </div>
       
+    
+<script src="/blog/js/main.js"></script>
 
     </body>
     </html>

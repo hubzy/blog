@@ -124,7 +124,7 @@ var _hmt = _hmt || [];
 
 
 
-<meta name="generator" content="Hexo 5.4.0"></head>
+<meta name="generator" content="Hexo 6.3.0"></head>
 
 
     <body class="max-width mx-auto">
@@ -769,20 +769,20 @@ var _hmt = _hmt || [];
     <p>书签脚本当然就是把脚本放到浏览器的书签里面</p>
 <span id="more"></span> 
 
-<h4 id="开启网页可编辑模式"><a href="#开启网页可编辑模式" class="headerlink" title="开启网页可编辑模式"></a>开启网页可编辑模式</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//只需要复制代码添加到书签即可</span></span><br><span class="line"><span class="attr">javascript</span>:</span><br><span class="line"><span class="built_in">document</span>.body.contentEditable=<span class="string">&#x27;true&#x27;</span>; </span><br><span class="line"><span class="built_in">document</span>.designMode=<span class="string">&#x27;on&#x27;</span>; <span class="keyword">void</span> <span class="number">0</span></span><br></pre></td></tr></table></figure>
+<h4 id="开启网页可编辑模式"><a href="#开启网页可编辑模式" class="headerlink" title="开启网页可编辑模式"></a>开启网页可编辑模式</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//只需要复制代码添加到书签即可</span></span><br><span class="line"><span class="attr">javascript</span>:</span><br><span class="line"><span class="variable language_">document</span>.<span class="property">body</span>.<span class="property">contentEditable</span>=<span class="string">&#x27;true&#x27;</span>; </span><br><span class="line"><span class="variable language_">document</span>.<span class="property">designMode</span>=<span class="string">&#x27;on&#x27;</span>; <span class="keyword">void</span> <span class="number">0</span></span><br></pre></td></tr></table></figure>
 
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">javascript:</span><br><span class="line">document.getElementsByClassName(&#x27;logo&#x27;)[0].style.display=&#x27;none&#x27;; </span><br><span class="line">void 0</span><br></pre></td></tr></table></figure>
 
 
 
-<h4 id="求字体网-免排队下载"><a href="#求字体网-免排队下载" class="headerlink" title="求字体网 免排队下载"></a>求字体网 免排队下载</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//只需要复制代码添加到书签即可</span></span><br><span class="line"><span class="attr">javascript</span>:</span><br><span class="line"><span class="keyword">const</span> iframe = <span class="built_in">document</span>.createElement(<span class="string">&#x27;iframe&#x27;</span>);</span><br><span class="line">iframe.style.display = <span class="string">&#x27;none&#x27;</span>;</span><br><span class="line">iframe.style.height = <span class="number">0</span>;</span><br><span class="line">iframe.src = <span class="built_in">window</span>.location.href.replace(<span class="string">&#x27;:8084&#x27;</span>,<span class="string">&#x27;:8083&#x27;</span>);</span><br><span class="line"><span class="built_in">document</span>.body.appendChild(iframe);<span class="keyword">void</span> <span class="number">0</span></span><br><span class="line"></span><br><span class="line">          </span><br></pre></td></tr></table></figure>
+<h4 id="求字体网-免排队下载"><a href="#求字体网-免排队下载" class="headerlink" title="求字体网 免排队下载"></a>求字体网 免排队下载</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//只需要复制代码添加到书签即可</span></span><br><span class="line"><span class="attr">javascript</span>:</span><br><span class="line"><span class="keyword">const</span> iframe = <span class="variable language_">document</span>.<span class="title function_">createElement</span>(<span class="string">&#x27;iframe&#x27;</span>);</span><br><span class="line">iframe.<span class="property">style</span>.<span class="property">display</span> = <span class="string">&#x27;none&#x27;</span>;</span><br><span class="line">iframe.<span class="property">style</span>.<span class="property">height</span> = <span class="number">0</span>;</span><br><span class="line">iframe.<span class="property">src</span> = <span class="variable language_">window</span>.<span class="property">location</span>.<span class="property">href</span>.<span class="title function_">replace</span>(<span class="string">&#x27;:8084&#x27;</span>,<span class="string">&#x27;:8083&#x27;</span>);</span><br><span class="line"><span class="variable language_">document</span>.<span class="property">body</span>.<span class="title function_">appendChild</span>(iframe);<span class="keyword">void</span> <span class="number">0</span></span><br><span class="line"></span><br><span class="line">          </span><br></pre></td></tr></table></figure>
 
 <h3 id="使用教程"><a href="#使用教程" class="headerlink" title="使用教程"></a>使用教程</h3><h4 id="示例一"><a href="#示例一" class="headerlink" title="示例一"></a>示例一</h4><p>使用场景，当我们想复制某些文字或代码的时候，发现网址无法复制；<br>通过简单两步即可消灭你的烦恼！耶～</p>
-<p><img src="/blog/%E8%84%9A%E6%9C%AC/%E4%B9%A6%E7%AD%BE%E8%84%9A%E6%9C%AC/image-20211215112709797.png" alt="image-20211215112709797"></p>
+<p><img src="/blog/脚本/书签脚本/image-20211215112709797.png" alt="image-20211215112709797"></p>
 <p>第一步、建立书签</p>
-<p><img src="/blog/%E8%84%9A%E6%9C%AC/%E4%B9%A6%E7%AD%BE%E8%84%9A%E6%9C%AC/image-20211215113016587.png" alt="image-20211215113016587"></p>
+<p><img src="/blog/脚本/书签脚本/image-20211215113016587.png" alt="image-20211215113016587"></p>
 <p>第二部、完成</p>
-<p><img src="/blog/%E8%84%9A%E6%9C%AC/%E4%B9%A6%E7%AD%BE%E8%84%9A%E6%9C%AC/image-20211215113202354.png" alt="image-20211215113202354"></p>
+<p><img src="/blog/脚本/书签脚本/image-20211215113202354.png" alt="image-20211215113202354"></p>
 
   </div>
 </article>
@@ -915,8 +915,6 @@ var _hmt = _hmt || [];
   </script>
 
 
-<script src="/blog/js/main.js"></script>
-
 
 <!-- Google Analytics -->
 
@@ -932,6 +930,8 @@ var _hmt = _hmt || [];
       </div>   
     </div>
       
+    
+<script src="/blog/js/main.js"></script>
 
     </body>
     </html>

@@ -128,7 +128,7 @@ var _hmt = _hmt || [];
 
 
 
-<meta name="generator" content="Hexo 5.4.0"></head>
+<meta name="generator" content="Hexo 6.3.0"></head>
 
 
     <body class="max-width mx-auto">
@@ -773,27 +773,27 @@ var _hmt = _hmt || [];
     <p>当你使用sketch预览时出现“连接错误⚠️”一定很扎心吧，这是由于预览端口的问题导致无法连接。</p>
 <span id="more"></span> 
 
-<p><img src="/blog/%E6%96%87%E7%AB%A0/sketch%E9%A2%84%E8%A7%88%E6%98%BE%E7%A4%BA%E8%BF%9E%E6%8E%A5%E9%94%99%E8%AF%AF%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/image-20220118110250523.png" alt="image-20220118110250523"></p>
+<p><img src="/blog/文章/sketch预览显示连接错误解决方案/image-20220118110250523.png" alt="image-20220118110250523"></p>
 <p>提示‼️操作前请先保存文件。</p>
-<p>1⃣️打开Mac电脑自带的活动监视器。<br><img src="/blog/%E6%96%87%E7%AB%A0/sketch%E9%A2%84%E8%A7%88%E6%98%BE%E7%A4%BA%E8%BF%9E%E6%8E%A5%E9%94%99%E8%AF%AF%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/image-20220118110725768.png" alt="image-20220118110725768"></p>
+<p>1⃣️打开Mac电脑自带的活动监视器。<br><img src="/blog/文章/sketch预览显示连接错误解决方案/image-20220118110725768.png" alt="image-20220118110725768"></p>
 <p>2⃣️选中顶部「能耗」查看sketch的占用端口号（端口号为动态端口）</p>
 <p>第一步</p>
 <p>‼️前提请先打开错误窗口，否则查看不到端口号</p>
-<p><img src="/blog/%E6%96%87%E7%AB%A0/sketch%E9%A2%84%E8%A7%88%E6%98%BE%E7%A4%BA%E8%BF%9E%E6%8E%A5%E9%94%99%E8%AF%AF%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/image-20220118110250523.png" alt="image-20220118110250523"></p>
+<p><img src="/blog/文章/sketch预览显示连接错误解决方案/image-20220118110250523.png" alt="image-20220118110250523"></p>
 <p>第二部</p>
-<p><img src="/blog/%E6%96%87%E7%AB%A0/sketch%E9%A2%84%E8%A7%88%E6%98%BE%E7%A4%BA%E8%BF%9E%E6%8E%A5%E9%94%99%E8%AF%AF%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/image-20220118110835190.png" alt="image-20220118110835190"></p>
+<p><img src="/blog/文章/sketch预览显示连接错误解决方案/image-20220118110835190.png" alt="image-20220118110835190"></p>
 <p>记住端口号为<code>62587</code></p>
-<p>3⃣️打开终端<br><img src="/blog/%E6%96%87%E7%AB%A0/sketch%E9%A2%84%E8%A7%88%E6%98%BE%E7%A4%BA%E8%BF%9E%E6%8E%A5%E9%94%99%E8%AF%AF%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/image-20220118111239099.png" alt="image-20220118111239099"></p>
+<p>3⃣️打开终端<br><img src="/blog/文章/sketch预览显示连接错误解决方案/image-20220118111239099.png" alt="image-20220118111239099"></p>
 <p>4⃣️进入终端输入</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo lsof -i tcp:你的端口号</span><br></pre></td></tr></table></figure>
 
 <p>会提示输入密码：直接输入再按回车键即可（密码不会显示但不必在乎）</p>
-<p>例如：<br><img src="/blog/%E6%96%87%E7%AB%A0/sketch%E9%A2%84%E8%A7%88%E6%98%BE%E7%A4%BA%E8%BF%9E%E6%8E%A5%E9%94%99%E8%AF%AF%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/image-20220118111826874.png" alt="image-20220118111826874"></p>
+<p>例如：<br><img src="/blog/文章/sketch预览显示连接错误解决方案/image-20220118111826874.png" alt="image-20220118111826874"></p>
 <p>此时此刻记住PID编号<code>77620</code></p>
 <p>5⃣️先保存sketch文件，清除端口进程（专业术语：杀掉这个端口）</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kill -9 你的PID号</span><br></pre></td></tr></table></figure>
 
-<p>按回车之后你的sketch会直接退出，记得先保存文件。然后再试试你的预览吧。<br><img src="/blog/%E6%96%87%E7%AB%A0/sketch%E9%A2%84%E8%A7%88%E6%98%BE%E7%A4%BA%E8%BF%9E%E6%8E%A5%E9%94%99%E8%AF%AF%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/image-20220118112117680.png" alt="image-20220118112117680"></p>
+<p>按回车之后你的sketch会直接退出，记得先保存文件。然后再试试你的预览吧。<br><img src="/blog/文章/sketch预览显示连接错误解决方案/image-20220118112117680.png" alt="image-20220118112117680"></p>
 
   </div>
 </article>
@@ -926,8 +926,6 @@ var _hmt = _hmt || [];
   </script>
 
 
-<script src="/blog/js/main.js"></script>
-
 
 <!-- Google Analytics -->
 
@@ -943,6 +941,8 @@ var _hmt = _hmt || [];
       </div>   
     </div>
       
+    
+<script src="/blog/js/main.js"></script>
 
     </body>
     </html>

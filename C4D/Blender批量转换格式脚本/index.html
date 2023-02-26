@@ -124,7 +124,7 @@ var _hmt = _hmt || [];
 
 
 
-<meta name="generator" content="Hexo 5.4.0"></head>
+<meta name="generator" content="Hexo 6.3.0"></head>
 
 
     <body class="max-width mx-auto">
@@ -769,8 +769,8 @@ var _hmt = _hmt || [];
     <p>Blender批量转换格式方法gltf转obj</p>
 <span id="more"></span> 
 
-<p><img src="/blog/C4D/Blender%E6%89%B9%E9%87%8F%E8%BD%AC%E6%8D%A2%E6%A0%BC%E5%BC%8F%E8%84%9A%E6%9C%AC/image-20220331184736271.png" alt="image-20220331184736271"></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">import</span> bpy</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"> </span><br><span class="line"> <span class="comment"># intoPath 源文件路径</span></span><br><span class="line"> <span class="comment"># outPath 转换后输出的路径</span></span><br><span class="line"></span><br><span class="line">intoPath = <span class="string">&quot;/Users/hubzy/Desktop/test&quot;</span></span><br><span class="line">outPath = <span class="string">&quot;/Users/hubzy/Desktop/test2&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 遍历intoPath文件夹内的文件</span></span><br><span class="line"><span class="keyword">for</span> i,j,k <span class="keyword">in</span> os.walk(intoPath):</span><br><span class="line">    <span class="keyword">for</span> a <span class="keyword">in</span> k:</span><br><span class="line">      <span class="comment"># 判断是否为.gltf格式</span></span><br><span class="line">        <span class="keyword">if</span> a.endswith(<span class="string">&quot;.gltf&quot;</span>):            </span><br><span class="line">            bpy.ops.<span class="built_in">object</span>.select_all(action = <span class="string">&#x27;SELECT&#x27;</span>)</span><br><span class="line">            <span class="comment"># 清理场景</span></span><br><span class="line">            bpy.ops.<span class="built_in">object</span>.delete()</span><br><span class="line"> 						<span class="comment"># 拼接文件路径  a:文件名称</span></span><br><span class="line">            inPathName = intoPath + <span class="string">&quot;/&quot;</span> + a</span><br><span class="line">            <span class="comment"># 导入gltf文件 .gltf() 使用 .gltf 函数方法导入</span></span><br><span class="line">            bpy.ops.import_scene.gltf(filepath = inPathName)</span><br><span class="line">            fname,ext = os.path.splitext(a)</span><br><span class="line">            <span class="comment"># 拼接导出文件路径及文件名称 后缀为.obj</span></span><br><span class="line">            outPathName = outPath + <span class="string">&quot;/&quot;</span> + fname + <span class="string">&quot;.obj&quot;</span></span><br><span class="line">            <span class="comment"># 导出obj文件 .obj() 使用 .obj 函数方法导出</span></span><br><span class="line">            bpy.ops.export_scene.obj(filepath = outPathName)</span><br><span class="line">          </span><br><span class="line">          </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><img src="/blog/C4D/Blender批量转换格式脚本/image-20220331184736271.png" alt="image-20220331184736271"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">import</span> bpy</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"> </span><br><span class="line"> <span class="comment"># intoPath 源文件路径</span></span><br><span class="line"> <span class="comment"># outPath 转换后输出的路径</span></span><br><span class="line"></span><br><span class="line">intoPath = <span class="string">&quot;/Users/hubzy/Desktop/test&quot;</span></span><br><span class="line">outPath = <span class="string">&quot;/Users/hubzy/Desktop/test2&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 遍历intoPath文件夹内的文件</span></span><br><span class="line"><span class="keyword">for</span> i,j,k <span class="keyword">in</span> os.walk(intoPath):</span><br><span class="line">    <span class="keyword">for</span> a <span class="keyword">in</span> k:</span><br><span class="line">      <span class="comment"># 判断是否为.gltf格式</span></span><br><span class="line">        <span class="keyword">if</span> a.endswith(<span class="string">&quot;.gltf&quot;</span>):            </span><br><span class="line">            bpy.ops.<span class="built_in">object</span>.select_all(action = <span class="string">&#x27;SELECT&#x27;</span>)</span><br><span class="line">            <span class="comment"># 清理场景</span></span><br><span class="line">            bpy.ops.<span class="built_in">object</span>.delete()</span><br><span class="line">             <span class="comment"># 拼接文件路径  a:文件名称</span></span><br><span class="line">            inPathName = intoPath + <span class="string">&quot;/&quot;</span> + a</span><br><span class="line">            <span class="comment"># 导入gltf文件 .gltf() 使用 .gltf 函数方法导入</span></span><br><span class="line">            bpy.ops.import_scene.gltf(filepath = inPathName)</span><br><span class="line">            fname,ext = os.path.splitext(a)</span><br><span class="line">            <span class="comment"># 拼接导出文件路径及文件名称 后缀为.obj</span></span><br><span class="line">            outPathName = outPath + <span class="string">&quot;/&quot;</span> + fname + <span class="string">&quot;.obj&quot;</span></span><br><span class="line">            <span class="comment"># 导出obj文件 .obj() 使用 .obj 函数方法导出</span></span><br><span class="line">            bpy.ops.export_scene.obj(filepath = outPathName)</span><br><span class="line">          </span><br><span class="line">          </span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <p>同理其它格式互转只需要修改方法名称即可如下</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 主要修改如下部分</span></span><br><span class="line"><span class="comment"># 1.修改15行的格式判断 &quot;.gltf&quot;</span></span><br><span class="line"><span class="comment"># 2.修改22行导入方法 .gltf()</span></span><br><span class="line"><span class="comment"># 3.修改25行导出后缀名出 &quot;.obj&quot;</span></span><br><span class="line"><span class="comment"># 4.修改27行导出方法 .obj()</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 根据个人所需进行配置修改即可</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
@@ -780,9 +780,9 @@ var _hmt = _hmt || [];
 <p>Tips:</p>
 <p>如何查看文件路径？</p>
 <p>第一步-右键，<code>新建位于文件夹位置的终端窗口</code></p>
-<p><img src="/blog/C4D/Blender%E6%89%B9%E9%87%8F%E8%BD%AC%E6%8D%A2%E6%A0%BC%E5%BC%8F%E8%84%9A%E6%9C%AC/image-20220331185715448.png" alt="image-20220331185715448"></p>
+<p><img src="/blog/C4D/Blender批量转换格式脚本/image-20220331185715448.png" alt="image-20220331185715448"></p>
 <p>第二部-输入<code>pwd</code> 再回车（确定）</p>
-<p><img src="/blog/C4D/Blender%E6%89%B9%E9%87%8F%E8%BD%AC%E6%8D%A2%E6%A0%BC%E5%BC%8F%E8%84%9A%E6%9C%AC/image-20220331185945801.png" alt="image-20220331185945801"></p>
+<p><img src="/blog/C4D/Blender批量转换格式脚本/image-20220331185945801.png" alt="image-20220331185945801"></p>
 <p>然后就得到了一个文件夹路径！可香</p>
 
   </div>
@@ -916,8 +916,6 @@ var _hmt = _hmt || [];
   </script>
 
 
-<script src="/blog/js/main.js"></script>
-
 
 <!-- Google Analytics -->
 
@@ -933,6 +931,8 @@ var _hmt = _hmt || [];
       </div>   
     </div>
       
+    
+<script src="/blog/js/main.js"></script>
 
     </body>
     </html>

@@ -1636,9 +1636,8 @@ code {
   background-color: var(--color-background-code);
 }
 .highlight {
-  overflow-x: auto;
   margin: 1rem 0;
-  padding: 0.8rem 0 0.35rem 0;
+  padding: 0.8rem 0;
   border-radius: 4px;
   background: var(--color-background-code);
   color: var(--color-meta-code);
