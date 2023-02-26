@@ -189,7 +189,6 @@ function switchTreeOrIndex() {
 function pjaxLoad(){
   $(document).pjax('#tree a', '.hubzy_center', {fragment:'.hubzy_center', timeout:8000});
   $(document).pjax('#tree a', '.hubzy_right', {fragment:'.hubzy_right', timeout:8000});
-  // $(document).pjax('#menu a', '.hubzy_center', {fragment:'.hubzy_center', timeout:8000});
   $(document).on({
       "pjax:complete": function(e) {
           // 添加 active
