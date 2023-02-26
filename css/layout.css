@@ -1097,12 +1097,20 @@ article .content .caption {
 }
 .hubzy_left #title {
   height: 80px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 14px 0;
 }
 .hubzy_left #title a {
   text-decoration: none;
+  display: inline;
+  height: fit-content;
+  width: 100%;
+  line-height: normal;
 }
 .hubzy_left #title h1 {
-  margin-top: 20px;
+  margin: 0;
   color: var(--color-text);
 }
 .hubzy_left #search {
@@ -1545,9 +1553,6 @@ body .home {
   -ms-hyphens: auto;
   -webkit-hyphens: auto;
 }
-.content .iconlist {
-  display: flex;
-}
 .content code {
   hyphens: manual;
   -moz-hyphens: manual;
@@ -1701,10 +1706,34 @@ code {
 .diyIcon {
   width: 14px;
   fill: var(--color-text);
-/* 设置滚动条的样式 */
 }
 .diyIcon:hover {
   fill: var(--color-link);
+}
+.iconlist {
+  display: flex;
+  align-items: center;
+  height: fit-content;
+  margin: 0;
+/* 设置滚动条的样式 */
+}
+.iconlist a {
+  color: var(--color-text);
+}
+.iconlist a:hover {
+  color: var(--color-link);
+}
+.iconlist a.icon {
+  background: none;
+  display: flex;
+  margin-right: 0.5rem;
+}
+.iconlist a.icon i {
+  display: flex;
+  align-items: center;
+}
+.iconlist a.icon:hover {
+  color: var(--color-link);
 }
 ::-webkit-scrollbar {
   width: 2px;
