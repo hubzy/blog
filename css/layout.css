@@ -883,6 +883,10 @@ article .content .caption {
 .hubzy_center .post .content {
   padding: 14px 60px;
 }
+.hubzy_center .post .content .nubScript {
+  color: var(--color-meta);
+  font-size: 12px;
+}
 .hubzy_center .img-pup {
   width: 100vw;
   height: 100vh;
@@ -1429,9 +1433,7 @@ article .content .caption {
 .highlight .code .emphasis {
   font-style: italic;
 }
-*,
-*:before,
-*:after {
+* *:before *:after {
   box-sizing: border-box;
 }
 @media (prefers-color-scheme: light) {
@@ -1477,6 +1479,9 @@ html {
   padding: 0;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  tap-highlight-color: rgba(0,0,0,0);
 }
 body {
   background-color: var(--color-background);
@@ -1552,6 +1557,8 @@ body .home {
   -moz-hyphens: auto;
   -ms-hyphens: auto;
   -webkit-hyphens: auto;
+  text-align: justify;
+  text-justify: inter-ideograph;
 }
 .content code {
   hyphens: manual;
