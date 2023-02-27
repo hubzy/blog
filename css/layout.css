@@ -526,6 +526,7 @@ article .content blockquote:after {
   vertical-align: 0.4em;
   font-size: 2em;
   line-height: 0.65em;
+  margin-top: -0.45em;
 }
 article .content blockquote footer {
   margin: line-height 0;
@@ -639,7 +640,7 @@ article .content .caption {
 }
 #footer-post #nav-footer ul li {
   display: inline-table;
-  padding: 8px;
+  padding: 8px 6px;
   width: 20%;
   vertical-align: middle;
 }
