@@ -1106,6 +1106,7 @@ article .content .caption {
   align-items: center;
   flex-wrap: wrap;
   padding: 14px 0;
+  box-sizing: border-box;
 }
 .hubzy_left #title a {
   text-decoration: none;
