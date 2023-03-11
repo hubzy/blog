@@ -920,6 +920,7 @@ article .content .caption {
   backdrop-filter: blur(15px);
   z-index: 99;
   flex-wrap: wrap;
+  box-sizing: border-box;
 }
 .hubzy_center .hubzy_center_title a {
   background: none;
@@ -1073,6 +1074,9 @@ article .content .caption {
 }
 .pagination a:hover:not(.active) {
   color: var(--color-accent-2);
+}
+a {
+  cursor: pointer;
 }
 .hubzy_left {
   width: 320px;
@@ -1744,8 +1748,8 @@ code {
   color: var(--color-link);
 }
 ::-webkit-scrollbar {
-  width: 2px;
-  height: 2px;
+  width: 6px;
+  height: 6px;
 }
 /* 滚动槽 */
 ::-webkit-scrollbar-track {
@@ -1763,12 +1767,12 @@ code {
 /* 滚动条滑块 */
 html:hover ::-webkit-scrollbar-thumb {
   border-radius: 10px;
-  background: rgba(255,255,255,0.1);
+  background: var(--color-scrollbar);
   -webkit-box-shadow: inset006pxrgba(0, 0, 0, 0);
   border-radius: 10px;
 }
 html:hover ::-webkit-scrollbar-thumb:window-inactive {
-  background: rgba(255,255,255,0);
+  background: var(--color-scrollbar);
   border-radius: 10px;
 }
 @media screen and (max-width: 540px) {

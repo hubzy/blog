@@ -47,6 +47,7 @@
   backdrop-filter: blur(15px);
   z-index: 99;
   flex-wrap: wrap;
+  box-sizing: border-box;
 }
 .hubzy_center .hubzy_center_title a {
   background: none;
@@ -196,4 +197,7 @@
 }
 .pagination a:hover:not(.active) {
   color: var(--color-accent-2);
+}
+a {
+  cursor: pointer;
 }
