@@ -453,9 +453,9 @@ article header .meta {
   margin-bottom: 1rem;
 }
 article header .meta * {
+  display: inline;
   color: var(--color-accent-3);
   font-size: 0.8rem;
-  display: inline;
 }
 article header .author {
   text-transform: uppercase;
@@ -521,12 +521,12 @@ article .content blockquote:before {
 }
 article .content blockquote:after {
   float: right;
+  margin-top: -0.45em;
   color: var(--color-quote);
   content: "\201D";
   vertical-align: 0.4em;
   font-size: 2em;
   line-height: 0.65em;
-  margin-top: -0.45em;
 }
 article .content blockquote footer {
   margin: line-height 0;
@@ -729,8 +729,8 @@ article .content .caption {
   }
 }
 #footer {
-  width: 100%;
   padding: 60px 0;
+  width: 100%;
   color: var(--color-meta);
   vertical-align: top;
   text-align: center;
@@ -880,6 +880,10 @@ article .content .caption {
   overflow-wrap: break-word;
   overflow-x: clip;
   padding: 0 20px;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  box-sizing: border-box;
 }
 .hubzy_center .post .content {
   padding: 14px 60px;
