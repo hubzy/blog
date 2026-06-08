@@ -6,6 +6,20 @@
   top: 0px;
   overflow: overlay;
 }
+.hubzy_left::-webkit-scrollbar {
+  width: 6px;
+  background: transparent;
+}
+.hubzy_left::-webkit-scrollbar-track {
+  background: transparent;
+}
+.hubzy_left::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  background: transparent;
+}
+.hubzy_left:hover::-webkit-scrollbar-thumb {
+  background: var(--color-scrollbar);
+}
 .hubzy_left .hubzy_logo {
   height: 80px;
   display: flex;
